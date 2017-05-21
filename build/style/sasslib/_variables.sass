@@ -1,0 +1,97 @@
+
+@font-face
+
+	font-family: "Montserrat-Thin"
+	font-weight: 400
+	src: url("fonts/montserrat-thin.woff2") format("woff2"), url("fonts/montserrat-thin.woff") format("woff")
+
+@font-face
+
+	font-family: "Montserrat-ExtraLight"
+	font-weight: 400
+	src: url("fonts/montserrat-extralight.woff2") format("woff2"), url("fonts/montserrat-extralight.woff") format("woff")
+
+@font-face
+
+	font-family: "Montserrat-Medium"
+	font-weight: 400
+	src: url("fonts/montserrat-medium.woff2") format("woff2"), url("fonts/montserrat-medium.woff") format("woff")
+
+//	Media Queries
+//	Compiles in the same order as declared here by the combiner plugin.
+
+$screen-small: 768px
+$screen-medium: 900px
+$screen-large: 1200px
+$screen-ultra: 1921px
+
+=sm
+
+	@media (min-width: $screen-small)
+
+		@content
+
+=md
+
+	@media (min-width: $screen-medium)
+
+		@content
+
+=lg
+
+	@media (min-width: $screen-large)
+
+		@content
+
+=ul
+
+	@media (min-width: $screen-ultra)
+
+		@content
+
+=mbMax
+
+	@media (max-width: ($screen-small - 1))
+
+		@content
+
+=smMax
+
+	@media (max-width: ($screen-medium - 1))
+
+		@content
+
+=mdMax
+
+	@media (max-width: ($screen-large - 1))
+
+		@content
+
+=lgMax
+
+	@media (max-width: ($screen-ultra - 1))
+
+		@content
+
+
+
+// Default Styles
+
+$primary-colour: #00d2e5
+$primary-colour-highlighted: #ff00a3
+$primary-text-colour: #555
+$primary-text-accented-colour: black
+$primary-text-colour-reversed: white
+$primary-font-family: "Montserrat-ExtraLight", Arial, Helvetica, sans-serif
+$primary-font-size: 16px
+$primary-font-weight: 400
+$primary-line-height: 1.25em
+
+$background-colour: #202020
+
+
+// mf = Montserrat Font
+
+$mf-thin: "Montserrat-Thin"
+$mf-light: "Montserrat-ExtraLight"
+$mf-medium: "Montserrat-Medium"

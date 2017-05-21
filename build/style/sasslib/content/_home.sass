@@ -1,0 +1,113 @@
+
+#home
+
+	height: 100%
+
+	.content
+
+		color: black
+
+		+sm
+
+			position: relative
+
+		h1.welcome
+
+			margin: 50% 0 0 0
+			max-width: 480px
+
+			font-size: 22px
+			line-height: 31px
+			font-weight: 400
+
+			text-align: center
+
+			+sm
+
+				margin: 0
+
+				font-family: $mf-thin
+				font-size: 25px
+				line-height: 32px
+
+				text-align: left
+
+			+ul
+
+				font-size: 36px
+				line-height: 48px
+				max-width: 600px
+
+		h2.shortie
+
+			display: none
+
+			margin: 40px 0
+
+			max-width: 550px
+
+			font-family: $mf-thin
+			font-size: 17px
+			font-weight: 400
+			line-height: 23px
+
+			+sm
+
+				display: block
+
+			+ul
+
+				max-width: 700px
+
+				font-family: $mf-thin
+				font-size: 22px
+				line-height: 27px
+
+		a.btn
+
+			position: absolute
+			bottom: 10vh
+			left: 50%
+			transform: translateX(-50%)
+
+			font-family: $mf-medium
+			font-size: 0.75em
+
+			padding: 0.8em 1.5em
+
+			background: $background-colour
+			border-radius: 6px
+
+			+sm
+
+				position: static
+				transform: none
+
+	.bgImg
+
+		position: absolute
+		z-index: 1000
+		top: 0
+		right: 0
+
+		width: 100vw
+		height: 100vh
+
+		background-image: url("../img/bgProfile.png")
+		background-repeat: no-repeat
+		background-size: 100% auto
+		background-position: bottom center
+
+		pointer-events: none
+
+		opacity: 1
+
+		+sm
+
+			background-size: auto 100%
+			background-position: top right
+
+			opacity: .65
+
+		+md
+

@@ -1,0 +1,160 @@
+include puglib/variables.pug
+
+doctype html
+
+html(lang="en")
+
+	head
+
+		include puglib/head.pug
+
+	body
+
+		#background
+		#stars
+
+		#hamburger
+
+			.nav
+
+				#closeHamburger
+
+					div
+					div
+
+				ul
+
+					li
+
+						span home
+
+						.highlight
+
+							.dots
+
+								div
+								div
+								div
+
+					li
+
+						span brands
+
+						.highlight
+
+							.dots
+
+								div
+								div
+								div
+
+					li
+
+						span cv
+
+						.highlight
+
+							.dots
+
+								div
+								div
+								div
+
+					li.active
+
+						span portfolio
+
+						.highlight
+
+							.dots
+
+								div
+								div
+								div
+
+					li
+
+						span contact
+
+						.highlight
+
+							.dots
+
+								div
+								div
+								div
+
+		header
+
+			ul.desktopNav
+
+				li#logo
+
+					img(src="img/logo.svg" alt="Logo")
+
+				li brands
+				li cv
+				li portfolio
+				li contact
+
+		main
+
+			#home(style="display: none")
+
+				.content
+
+					h1.welcome Hey there, I’m  #[span.mf-medium Efe Buyuran], and I’m a  #[span.mf-medium Front-End Developer] from #[span.mf-medium Istanbul] with #[span.mf-medium 10] years of experience.
+
+					h2.shortie Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratone voluptatem sequi nesciunt.
+
+					a.btn(href=vl) VIEW MY WORK
+
+				.bgImg
+
+			#brands
+
+				.container
+
+					.item
+
+						img(src="img/brands/hyundai.png")
+
+					.item
+
+						img(src="img/brands/huawei.png")
+
+					.item
+
+						img(src="img/brands/aygaz.png")
+
+					.item
+
+						img(src="img/brands/opet.png")
+
+					.item
+
+						img(src="img/brands/noluyo.png")
+
+					.item
+
+						img(src="img/brands/1V1Y.png")
+
+		include puglib/bottom.pug
+
+		script.
+
+			if (EB.ScreenSize.Width() < 768) {
+
+				(function($){
+
+					$(window).on("load",function(){
+
+						$("#brands").mCustomScrollbar({
+							theme:"dark"
+						});
+
+					});
+
+				})(jQuery);
+
+			}

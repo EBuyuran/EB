@@ -1,0 +1,235 @@
+
+$headerHeightMb: 30px
+$headerHeightSm: 46px
+$headerHeightMd: 46px
+$headerHeightLg: 46px
+$headerHeightUl: 64px
+
+
+#hamburger
+
+	position: absolute
+	z-index: 1000
+	top: 0
+	left: 0
+
+	width: 100vw
+	height: 0
+
+	overflow: hidden
+	transition: .35s all ease-in-out
+
+	.nav
+
+		position: relative
+		top: 0
+		left: 0
+
+		width: 100vw
+
+		padding: 10vh
+
+		background: $background-colour
+
+		+sm
+
+			display: none
+
+		#closeHamburger
+
+			position: absolute
+			top: 10vh
+			right: 10vh
+			z-index: 300
+
+			width: 20px
+			height: 20px
+
+			div
+
+				width: 16px
+				height: 2px
+
+				background: white
+
+				position: absolute
+				top: 50%
+				left: 50%
+
+				&:nth-child(1)
+
+					transform: translate(-50%, -50%) rotate(45deg)
+
+				&:nth-child(2)
+
+					transform: translate(-50%, -50%) rotate(-45deg)
+
+	ul
+
+		margin: 0
+
+		li
+
+			position: relative
+			width: 70vw
+
+			color: white
+			line-height: 1.35em
+
+			&:first-child
+
+				margin-top: 0
+
+			&:last-child
+
+				margin-bottom: 0
+
+			&.active > .highlight
+
+				display: block !important
+
+			&.active > span
+
+				font-family: $mf-medium
+
+			.highlight
+
+				display: none
+
+				position: absolute
+				top: -4px
+				left: -20vw
+				z-index: 100
+
+				width: 65vw
+				height: 1.25em
+
+				padding: 4px 0
+				box-sizing: content-box
+
+				background: $primary-colour
+
+				&:after
+
+					content: ""
+
+					position: absolute
+					right: calc(-1.25em - 8px)
+					top: 0
+
+					width: 0
+					height: 0
+
+					border-top: calc(1.25em + 8px) solid $primary-colour
+					border-right: calc(1.25em + 8px) solid transparent
+
+				.dots
+
+					width: 6px
+					height: 11px
+
+					position: absolute
+					top: 9px
+					left: 14vw
+
+					div
+
+						position: absolute
+
+						width: 3px
+						height: 3px
+
+						background: white
+
+						&:nth-child(1)
+
+							top: 0
+							left: 0
+
+						&:nth-child(2)
+
+							top: 4px
+							right: 0
+
+						&:nth-child(3)
+
+							bottom: 0
+							left: 0
+
+			span
+
+				position: relative
+				z-index: 200
+
+header
+
+	position: absolute
+	z-index: 500
+
+	ul.desktopNav
+
+		margin: 0
+
+		height: $headerHeightMb
+		line-height: $headerHeightMb
+
+		+sm
+
+			display: block
+			height: $headerHeightSm
+			line-height: $headerHeightSm
+
+		+ul
+
+			height: $headerHeightUl
+			line-height: $headerHeightUl
+
+		li
+
+			display: none
+			float: left
+
+			height: inherit
+			line-height: inherit
+
+			font-size: 19px
+
+			margin: 0
+			margin-right: 24px
+
+			cursor: pointer
+
+			+sm
+
+				display: block
+
+			+ul
+
+				font-size: 24px
+				margin-right: 36px
+
+			&#logo
+
+				display: block !important
+				margin-right: 30px
+
+				+ul
+
+					margin-right: 44px
+
+				img
+
+					display: block
+
+					width: auto
+					height: 100%
+
+main
+
+	width: 100vw
+	height: 100vh
+
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 100
