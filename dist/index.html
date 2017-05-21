@@ -12,13 +12,13 @@
     <div id="background"></div>
     <div id="stars"></div>
     <div id="hamburger">
-      <div class="nav">
+      <div class="mobileNav">
         <div id="closeHamburger">
           <div></div>
           <div></div>
         </div>
         <ul>
-          <li><span>home</span>
+          <li class="home active"><span>home</span>
             <div class="highlight">
               <div class="dots">
                 <div></div>
@@ -27,7 +27,7 @@
               </div>
             </div>
           </li>
-          <li><span>brands</span>
+          <li class="brands"><span>brands</span>
             <div class="highlight">
               <div class="dots">
                 <div></div>
@@ -36,7 +36,7 @@
               </div>
             </div>
           </li>
-          <li><span>cv</span>
+          <li class="cv"><span>cv</span>
             <div class="highlight">
               <div class="dots">
                 <div></div>
@@ -45,7 +45,7 @@
               </div>
             </div>
           </li>
-          <li class="active"><span>portfolio</span>
+          <li class="portfolio"><span>portfolio</span>
             <div class="highlight">
               <div class="dots">
                 <div></div>
@@ -54,7 +54,7 @@
               </div>
             </div>
           </li>
-          <li><span>contact</span>
+          <li class="contact"><span>contact</span>
             <div class="highlight">
               <div class="dots">
                 <div></div>
@@ -67,16 +67,21 @@
       </div>
     </div>
     <header>
-      <ul class="desktopNav">
-        <li id="logo"><img src="img/logo.svg" alt="Logo"></li>
-        <li>brands</li>
-        <li>cv</li>
-        <li>portfolio</li>
-        <li>contact</li>
+      <ul class="nav">
+        <li class="home logo"><img src="img/logo.svg" alt="Logo"></li>
+        <li class="brands">brands</li>
+        <li class="cv">cv</li>
+        <li class="portfolio">portfolio</li>
+        <li class="contact">contact</li>
+        <li class="hamburgerBtn">
+          <div></div>
+          <div></div>
+          <div></div>
+        </li>
       </ul>
     </header>
     <main>
-      <div id="home" style="display: none;">
+      <div id="home">
         <div class="content">
           <h1 class="welcome">Hey there, I’m  <span class="mf-medium">Efe Buyuran</span>, and I’m a  <span class="mf-medium">Front-End Developer</span> from <span class="mf-medium">Istanbul</span> with <span class="mf-medium">10</span> years of experience.</h1>
           <h2 class="shortie">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratone voluptatem sequi nesciunt.</h2><a class="btn">VIEW MY WORK</a>
@@ -84,13 +89,84 @@
         <div class="bgImg"></div>
       </div>
       <div id="brands">
+        <div class="note">Aliquam erat volutpat. Vestibulum convallis viverra ante quis viverra. Praesent at libero <span class="mf-medium">thekingCCA</span>, viverra nunc eu, posuere elit.</div>
         <div class="container">
           <div class="item"><img src="img/brands/hyundai.png"></div>
           <div class="item"><img src="img/brands/huawei.png"></div>
           <div class="item"><img src="img/brands/aygaz.png"></div>
           <div class="item"><img src="img/brands/opet.png"></div>
           <div class="item"><img src="img/brands/noluyo.png"></div>
-          <div class="item"><img src="img/brands/1V1Y.png"></div>
+          <div class="item"><img src="img/brands/1v1y.png"></div>
+        </div>
+      </div>
+      <div class="active" id="cv">
+        <div class="block">
+          <h3>About Me</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus ipsum convallis orci congue finibus. Aliquam pharetra tortor scelerisque elit aliquet ullamcorper nec vitae risus. Nam luctus massa lacinia consectetur aliquet. Pellentesque nec odio diam. Etiam lorem metus, accumsan in rhoncus ac, fermentum vel arcu. Morbi id dictum libero, ut lobortis eros. Nulla in sodales quam. Sed rutrum, elit vitae venenatis ultricies, elit nisl egestas diam, non tristique nisl felis eu sem. Vivamus vel viverra nibh. Aenean tincidunt tellus ac aliquet tempor. Curabitur et metus bibendum, euismod libero id, commodo sem. Phasellus commodo odio vestibulum odio cursus, non placerat nulla pulvinar.</p>
+          <p>Aenean risus elit, consectetur at cursus quis, rhoncus quis ex. Quisque sed imperdiet ipsum, sit amet tincidunt tellus. Donec at dui vitae nunc tempor ornare et tincidunt arcu. Suspendisse mattis luctus tellus, bibendum sollicitudin nisl cursus a. Suspendisse blandit massa eu nisi varius, et consectetur quam scelerisque. Fusce molestie lectus non consequat convallis. Nam rutrum mauris in molestie dignissim. Pellentesque lobortis augue eros, vitae consectetur nibh tincidunt sed. Vivamus eget risus posuere, congue nulla sodales, rutrum quam.</p>
+          <p>Vestibulum finibus ullamcorper nulla, ut mattis urna luctus non. Nulla hendrerit ipsum augue, at rutrum dolor volutpat a. Integer suscipit tristique sem, vel faucibus orci facilisis et. Phasellus rutrum ante dapibus mi dictum sodales. Praesent cursus arcu eu orci hendrerit condimentum. Quisque a rhoncus ipsum, quis vehicula justo. Proin ut ultricies dolor. Suspendisse interdum ante eget risus aliquam, at sodales tellus semper. Mauris est justo, bibendum ac augue sit amet, tincidunt ultricies turpis. Fusce consequat rutrum est eu iaculis. Suspendisse non est ac nibh accumsan varius ac sed mi. Aliquam mattis, massa non egestas consequat, leo ex vulputate est, a molestie elit tellus id nisi.</p>
+        </div>
+        <div class="block">
+          <h3>Skills</h3>
+          <div class="list">
+            <h5>Creative</h5>
+            <ul class="listed">
+              <li>Adobe Photoshop</li>
+              <li>Adobe Illustrator</li>
+              <li>Image Manipulation</li>
+              <li>Branding</li>
+              <li>Logo Design</li>
+              <li>Icon Design</li>
+              <li>Interface Design</li>
+            </ul>
+          </div>
+          <div class="list">
+            <h5>Front-End</h5>
+            <ul class="listed">
+              <li>HTML5 -> PUG</li>
+              <li>CSS3 -> SASS</li>
+              <li>Native Javascript</li>
+              <li>jQuery</li>
+              <li>Ajax</li>
+              <li>NodeJS</li>
+              <li>Gulp & Grunt</li>
+            </ul>
+          </div>
+        </div>
+        <div class="block">
+          <h3>Work Experience</h3>
+          <div class="job">
+            <div class="info">
+              <div class="company">theKingCCA</div>
+              <div class="title">Front-End Developer</div>
+              <div class="timeframe">April '16 - Present</div>
+            </div>
+            <div class="logo"><img class="theking" src="img/jobExp/theking.png"></div>
+          </div>
+          <div class="job">
+            <div class="info">
+              <div class="company">N'oluyo</div>
+              <div class="title">Front-End Developer</div>
+              <div class="timeframe">September - December '15</div>
+            </div>
+            <div class="logo"><img class="noluyo" src="img/jobExp/noluyo.png"></div>
+          </div>
+          <div class="job">
+            <div class="info">
+              <div class="company">Empire</div>
+              <div class="title">Stormtrooper</div>
+              <div class="timeframe">February - July '15</div>
+            </div>
+            <div class="logo"><img class="empire" src="img/jobExp/empire.png"></div>
+          </div>
+          <div class="job">
+            <div class="info">
+              <div class="company">1V1Y</div>
+              <div class="title">Graphic Designer</div>
+              <div class="timeframe">Augustus - October '13</div>
+            </div>
+            <div class="logo"><img class="empire" src="img/jobExp/1v1y.png"></div>
+          </div>
         </div>
       </div>
     </main>
@@ -107,11 +183,27 @@
       				theme:"dark"
       			});
       
+      			$("#cv").mCustomScrollbar({
+      				theme:"dark"
+      			});
+      
       		});
       
       	})(jQuery);
       
       }
+      
+      (function($){
+      
+      	$(window).on("load",function(){
+      
+      		$("#cv").mCustomScrollbar({
+      			theme:"dark"
+      		});
+      
+      	});
+      
+      })(jQuery);
     </script>
   </body>
 </html>

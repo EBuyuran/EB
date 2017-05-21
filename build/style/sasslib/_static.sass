@@ -19,7 +19,7 @@ $headerHeightUl: 64px
 	overflow: hidden
 	transition: .35s all ease-in-out
 
-	.nav
+	.mobileNav
 
 		position: relative
 		top: 0
@@ -166,7 +166,7 @@ header
 	position: absolute
 	z-index: 500
 
-	ul.desktopNav
+	ul.nav
 
 		margin: 0
 
@@ -208,7 +208,7 @@ header
 				font-size: 24px
 				margin-right: 36px
 
-			&#logo
+			&.logo
 
 				display: block !important
 				margin-right: 30px
@@ -224,6 +224,45 @@ header
 					width: auto
 					height: 100%
 
+			&.hamburgerBtn
+
+				display: block !important
+				float: right
+
+				position: relative
+
+				width: 30px
+				margin: 0
+
+				opacity: .75
+
+				div
+
+					position: absolute
+					left: 50%
+					transform: translateX(-50%)
+
+					width: 16px
+					height: 3px
+
+					background: black
+
+					&:nth-child(1)
+
+						top: 8px
+
+					&:nth-child(2)
+
+						top: 13px
+
+					&:nth-child(3)
+
+						top: 18px
+
+				+sm
+
+					display: none !important
+
 main
 
 	width: 100vw
@@ -233,3 +272,41 @@ main
 	top: 0
 	left: 0
 	z-index: 100
+
+	#home, #brands, #cv, #portfolio, #contact
+
+		opacity: 0
+		pointer-events: none
+
+		position: absolute
+
+		transition: .35s opacity ease-in-out
+
+		padding-top: ($headerHeightMb + 20px)
+
+		+sm
+
+			padding-top: ($headerHeightSm + 20px)
+
+		+ul
+
+			padding-top: ($headerHeightUl + 20px)
+
+		&.horizontal
+
+			margin: 10vw
+
+			width: 80vw
+			height: calc(100vh - 20vw
+
+		&.vertical
+
+			margin: 10vh
+
+			width: calc(100vw - 20vh)
+			height: 80vh
+
+	.active
+
+		opacity: 1 !important
+		pointer-events: auto !important

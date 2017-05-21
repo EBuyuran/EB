@@ -4,17 +4,9 @@
 	height: 100%
 	overflow: auto
 
+	position: relative
+
 	text-align: center
-
-	padding-top: ($headerHeightMb + 20px)
-
-	+sm
-
-		padding-top: ($headerHeightSm + 20px)
-
-	+ul
-
-		padding-top: ($headerHeightUl + 20px)
 
 	.container
 
@@ -33,9 +25,21 @@
 
 			+sm
 
+				width: 130px
+				height: 130px
+				line-height: 130px
+
+			+lg
+
 				width: 160px
 				height: 160px
 				line-height: 160px
+
+			+ul
+
+				width: 280px
+				height: 280px
+				line-height: 280px
 
 			img
 
@@ -45,3 +49,16 @@
 
 				width: auto
 				height: 100%
+
+	.note
+
+		font-size: 14px
+		line-height: 1.4em
+
+		+sm
+
+			position: absolute
+			bottom: 0
+			left: 0
+
+			text-align: left

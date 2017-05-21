@@ -15,7 +15,7 @@ html(lang="en")
 
 		#hamburger
 
-			.nav
+			.mobileNav
 
 				#closeHamburger
 
@@ -24,7 +24,8 @@ html(lang="en")
 
 				ul
 
-					li
+					li.home.active
+
 
 						span home
 
@@ -36,7 +37,7 @@ html(lang="en")
 								div
 								div
 
-					li
+					li.brands
 
 						span brands
 
@@ -48,7 +49,7 @@ html(lang="en")
 								div
 								div
 
-					li
+					li.cv
 
 						span cv
 
@@ -60,7 +61,7 @@ html(lang="en")
 								div
 								div
 
-					li.active
+					li.portfolio
 
 						span portfolio
 
@@ -72,7 +73,7 @@ html(lang="en")
 								div
 								div
 
-					li
+					li.contact
 
 						span contact
 
@@ -86,20 +87,26 @@ html(lang="en")
 
 		header
 
-			ul.desktopNav
+			ul.nav
 
-				li#logo
+				li.home.logo
 
 					img(src="img/logo.svg" alt="Logo")
 
-				li brands
-				li cv
-				li portfolio
-				li contact
+				li.brands brands
+				li.cv cv
+				li.portfolio portfolio
+				li.contact contact
+
+				li.hamburgerBtn
+
+					div
+					div
+					div
 
 		main
 
-			#home(style="display: none")
+			#home
 
 				.content
 
@@ -112,6 +119,8 @@ html(lang="en")
 				.bgImg
 
 			#brands
+
+				.note Aliquam erat volutpat. Vestibulum convallis viverra ante quis viverra. Praesent at libero #[span.mf-medium thekingCCA], viverra nunc eu, posuere elit.
 
 				.container
 
@@ -137,7 +146,109 @@ html(lang="en")
 
 					.item
 
-						img(src="img/brands/1V1Y.png")
+						img(src="img/brands/1v1y.png")
+
+			#cv.active
+
+				.block
+
+					h3 About Me
+
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus ipsum convallis orci congue finibus. Aliquam pharetra tortor scelerisque elit aliquet ullamcorper nec vitae risus. Nam luctus massa lacinia consectetur aliquet. Pellentesque nec odio diam. Etiam lorem metus, accumsan in rhoncus ac, fermentum vel arcu. Morbi id dictum libero, ut lobortis eros. Nulla in sodales quam. Sed rutrum, elit vitae venenatis ultricies, elit nisl egestas diam, non tristique nisl felis eu sem. Vivamus vel viverra nibh. Aenean tincidunt tellus ac aliquet tempor. Curabitur et metus bibendum, euismod libero id, commodo sem. Phasellus commodo odio vestibulum odio cursus, non placerat nulla pulvinar.
+
+					p Aenean risus elit, consectetur at cursus quis, rhoncus quis ex. Quisque sed imperdiet ipsum, sit amet tincidunt tellus. Donec at dui vitae nunc tempor ornare et tincidunt arcu. Suspendisse mattis luctus tellus, bibendum sollicitudin nisl cursus a. Suspendisse blandit massa eu nisi varius, et consectetur quam scelerisque. Fusce molestie lectus non consequat convallis. Nam rutrum mauris in molestie dignissim. Pellentesque lobortis augue eros, vitae consectetur nibh tincidunt sed. Vivamus eget risus posuere, congue nulla sodales, rutrum quam.
+
+					p Vestibulum finibus ullamcorper nulla, ut mattis urna luctus non. Nulla hendrerit ipsum augue, at rutrum dolor volutpat a. Integer suscipit tristique sem, vel faucibus orci facilisis et. Phasellus rutrum ante dapibus mi dictum sodales. Praesent cursus arcu eu orci hendrerit condimentum. Quisque a rhoncus ipsum, quis vehicula justo. Proin ut ultricies dolor. Suspendisse interdum ante eget risus aliquam, at sodales tellus semper. Mauris est justo, bibendum ac augue sit amet, tincidunt ultricies turpis. Fusce consequat rutrum est eu iaculis. Suspendisse non est ac nibh accumsan varius ac sed mi. Aliquam mattis, massa non egestas consequat, leo ex vulputate est, a molestie elit tellus id nisi.
+
+				.block
+
+					h3 Skills
+
+					.list
+
+						h5 Creative
+
+						ul.listed
+
+							li Adobe Photoshop
+							li Adobe Illustrator
+							li Image Manipulation
+							li Branding
+							li Logo Design
+							li Icon Design
+							li Interface Design
+
+					.list
+
+						h5 Front-End
+
+						ul.listed
+
+							li HTML5 -> PUG
+							li CSS3 -> SASS
+							li Native Javascript
+							li jQuery
+							li Ajax
+							li NodeJS
+							li Gulp & Grunt
+
+				.block
+
+					h3 Work Experience
+
+					.job
+
+						.info
+
+							.company theKingCCA
+							.title Front-End Developer
+							.timeframe April '16 - Present
+
+						.logo
+
+							img.theking(src="img/jobExp/theking.png")
+
+					.job
+
+						.info
+
+							.company N'oluyo
+							.title Front-End Developer
+							.timeframe September - December '15
+
+						.logo
+
+							img.noluyo(src="img/jobExp/noluyo.png")
+
+					.job
+
+						.info
+
+							.company Empire
+							.title Stormtrooper
+							.timeframe February - July '15
+
+						.logo
+
+							img.empire(src="img/jobExp/empire.png")
+
+					.job
+
+						.info
+
+							.company 1V1Y
+							.title Graphic Designer
+							.timeframe Augustus - October '13
+
+						.logo
+
+							img.empire(src="img/jobExp/1v1y.png")
+
+
+
+
+
+
 
 		include puglib/bottom.pug
 
@@ -153,8 +264,24 @@ html(lang="en")
 							theme:"dark"
 						});
 
+						$("#cv").mCustomScrollbar({
+							theme:"dark"
+						});
+
 					});
 
 				})(jQuery);
 
 			}
+
+			(function($){
+
+				$(window).on("load",function(){
+
+					$("#cv").mCustomScrollbar({
+						theme:"dark"
+					});
+
+				});
+
+			})(jQuery);

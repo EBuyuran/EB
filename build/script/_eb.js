@@ -18,6 +18,7 @@ var EB = {
 		EB.Background.Stars.OnPageLoad();
 		EB.Hamburger.init();
 		EB.PageContent.init();
+		EB.PageSwitcher.init();
 
 		window.addEventListener("resize", EB.ResizeFunctions.init);
 
@@ -195,8 +196,6 @@ var EB = {
 
 						randomizedNumber = EB.CommonFunctions.RandomNumber(0, 20);
 
-						// Randomly assign additional css animation
-
 						if (randomizedNumber < 10) {
 
 							animate1();
@@ -299,24 +298,42 @@ var EB = {
 
 		init: function() {
 
-			EB.PageLayout.MainPadding();
+			EB.PageLayout.PageShape();
 			EB.PageLayout.HeaderPadding();
 
 		},
 
-		MainPadding: function() {
+		PageShape: function() {
 
 			// Defining the padding value of the container of pages.
 
 			if (EB.ScreenSize.Width() > EB.ScreenSize.Height()) {
 
-				document.getElementsByTagName("main")[0].style.padding = "10vw";
+				EB.PageLayout.Horizontal("home");
+				EB.PageLayout.Horizontal("brands");
+				EB.PageLayout.Horizontal("cv");
 
 			} else {
 
-				document.getElementsByTagName("main")[0].style.padding = "10vh";
+				EB.PageLayout.Vertical("home");
+				EB.PageLayout.Vertical("brands");
+				EB.PageLayout.Vertical("cv");
 
 			}
+
+		},
+
+		Horizontal: function (pageId) {
+
+			document.getElementById(pageId).classList.remove("vertical");
+			document.getElementById(pageId).classList.add("horizontal");
+
+		},
+
+		Vertical: function (pageId) {
+
+			document.getElementById(pageId).classList.remove("horizontal");
+			document.getElementById(pageId).classList.add("vertical");
 
 		},
 
@@ -348,12 +365,13 @@ var EB = {
 
 			if (EB.ScreenSize.Width() < screenSm) {
 
-				var logo, closeHamburger;
+				var logo, hamburgerBtn, closeHamburger;
 
-				logo = document.getElementById("logo");
+				logo = document.getElementsByClassName("logo")[0];
 				closeHamburger = document.getElementById("closeHamburger");
+				hamburgerBtn = document.getElementsByClassName("hamburgerBtn")[0];
 
-				logo.addEventListener("click", function() {
+				hamburgerBtn.addEventListener("click", function() {
 
 					EB.Hamburger.Expand();
 
@@ -374,7 +392,7 @@ var EB = {
 			var hamburger, navigation, navSize;
 
 			hamburger = document.getElementById("hamburger");
-			navigation = hamburger.getElementsByClassName("nav")[0];
+			navigation = hamburger.getElementsByClassName("mobileNav")[0];
 			navSize = navigation.offsetHeight;
 
 			hamburger.style.height = navSize + "px";
@@ -386,7 +404,7 @@ var EB = {
 			var hamburger, navigation, navSize;
 
 			hamburger = document.getElementById("hamburger");
-			navigation = hamburger.getElementsByClassName("nav")[0];
+			navigation = hamburger.getElementsByClassName("mobileNav")[0];
 			navSize = navigation.offsetHeight;
 
 			hamburger.style.height = 0;
@@ -397,7 +415,99 @@ var EB = {
 
 	PageSwitcher: {
 
+		init: function() {
 
+			EB.PageSwitcher.AddListeners("home");
+			EB.PageSwitcher.AddListeners("brands");
+			EB.PageSwitcher.AddListeners("cv");
+			EB.PageSwitcher.AddListeners("portfolio");
+			EB.PageSwitcher.AddListeners("contact");
+
+		},
+
+		AddListeners: function(pageId) {
+
+			var elements, size;
+
+			elements = document.getElementsByClassName(pageId);
+			size = elements.length;
+
+			for (var i = 0; i < size; i++) {
+
+				elements[i].addEventListener("click", function() {
+
+					EB.PageSwitcher.Switch(pageId);
+
+				});
+
+			};
+
+		},
+
+		Switch: function(newPage) {
+
+			var oldPage = EB.PageSwitcher.DetectOldPage();
+
+			if (oldPage !== newPage) {
+
+				EB.Hamburger.Close();
+				EB.PageSwitcher.ChangePage(oldPage, newPage);
+
+				var hamburger, children, childrenSize;
+
+				hamburger = document.getElementsByClassName("mobileNav")[0];
+				hamburger = hamburger.getElementsByTagName("ul")[0];
+				children = hamburger.children;
+				childrenSize = children.length;
+
+				setTimeout(function() {
+
+					for (var i = 0; i < childrenSize; i++) {
+
+						if (children[i].classList.contains(oldPage)) {
+
+							children[i].classList.remove("active");
+
+						} else if (children[i].classList.contains(newPage)) {
+
+							children[i].classList.add("active");
+
+						}
+
+					};
+
+				}, 350);
+
+			};
+
+		},
+
+		DetectOldPage: function() {
+
+			var main, children, childrenSize;
+
+			main = document.getElementsByTagName("main")[0];
+			children = main.children;
+			childrenSize = children.length;
+
+			for (var i = 0; i < childrenSize; i++) {
+
+				if (children[i].classList.contains("active")) {
+
+					return children[i].getAttribute("id");
+
+				};
+
+			};
+
+		},
+
+		ChangePage: function(oldPage, newPage) {
+
+			document.getElementById(oldPage).classList.remove("active");
+			document.getElementById(newPage).classList.add("active");
+
+		}
 
 	},
 
@@ -414,15 +524,22 @@ var EB = {
 
 			init: function() {
 
-				var home, homeHeight, welcome, welcomeHeight, calculate;
+				// This complicated function centers the welcome message exatcly to the vertical center of the page and rest of the content below it.
 
-				home = document.getElementById("home");
-				homeHeight = home.offsetHeight;
+				var welcome, welcomeHeight, calculate;
 
 				welcome = home.getElementsByClassName("welcome")[0];
 				welcomeHeight = welcome.offsetHeight;
 
-				calculate = (homeHeight / 2) - (welcomeHeight / 2)
+				if (EB.ScreenSize.Width() > EB.ScreenSize.Height()) {
+
+					calculate = ((EB.ScreenSize.Height() - (EB.ScreenSize.Width() * 0.2)) / 2) - (welcomeHeight / 2);
+
+				} else {
+
+					calculate = ((EB.ScreenSize.Width() - (EB.ScreenSize.Height() * 0.2)) / 2) - (welcomeHeight / 2);
+
+				}
 
 				home.getElementsByClassName("content")[0].style.top = calculate + "px";
 
@@ -444,7 +561,7 @@ var EB = {
 
 				if (brandsHeight > containerHeight && EB.ScreenSize.Width() > screenSm) {
 
-					calculate = (brandsHeight / 2) - (containerHeight / 2)
+					calculate = (brandsHeight * 0.5) - containerHeight;
 
 					container.style.top = calculate + "px";
 

@@ -30,7 +30,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   margin: 0;
-  color: #555;
+  color: black;
   font-family: "Montserrat-ExtraLight", Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -146,7 +146,7 @@ ol, ul {
 
 .listed, .listed {
   margin: 24px 0 24px 16px;
-  padding-left: 24px; }
+  padding-left: 12px; }
 
 ul.listed {
   list-style: disc; }
@@ -688,7 +688,7 @@ table {
   height: 0;
   overflow: hidden;
   transition: .35s all ease-in-out; }
-  #hamburger .nav {
+  #hamburger .mobileNav {
     position: relative;
     top: 0;
     left: 0;
@@ -696,26 +696,26 @@ table {
     padding: 10vh;
     background: #202020; }
     @media (min-width: 768px) {
-      #hamburger .nav {
+      #hamburger .mobileNav {
         display: none; } }
-    #hamburger .nav #closeHamburger {
+    #hamburger .mobileNav #closeHamburger {
       position: absolute;
       top: 10vh;
       right: 10vh;
       z-index: 300;
       width: 20px;
       height: 20px; }
-      #hamburger .nav #closeHamburger div {
+      #hamburger .mobileNav #closeHamburger div {
         width: 16px;
         height: 2px;
         background: white;
         position: absolute;
         top: 50%;
         left: 50%; }
-        #hamburger .nav #closeHamburger div:nth-child(1) {
+        #hamburger .mobileNav #closeHamburger div:nth-child(1) {
           -webkit-transform: translate(-50%, -50%) rotate(45deg);
                   transform: translate(-50%, -50%) rotate(45deg); }
-        #hamburger .nav #closeHamburger div:nth-child(2) {
+        #hamburger .mobileNav #closeHamburger div:nth-child(2) {
           -webkit-transform: translate(-50%, -50%) rotate(-45deg);
                   transform: translate(-50%, -50%) rotate(-45deg); }
   #hamburger ul {
@@ -780,20 +780,20 @@ table {
 header {
   position: absolute;
   z-index: 500; }
-  header ul.desktopNav {
+  header ul.nav {
     margin: 0;
     height: 30px;
     line-height: 30px; }
     @media (min-width: 768px) {
-      header ul.desktopNav {
+      header ul.nav {
         display: block;
         height: 46px;
         line-height: 46px; } }
     @media (min-width: 1921px) {
-      header ul.desktopNav {
+      header ul.nav {
         height: 64px;
         line-height: 64px; } }
-    header ul.desktopNav li {
+    header ul.nav li {
       display: none;
       float: left;
       height: inherit;
@@ -803,22 +803,46 @@ header {
       margin-right: 24px;
       cursor: pointer; }
       @media (min-width: 768px) {
-        header ul.desktopNav li {
+        header ul.nav li {
           display: block; } }
       @media (min-width: 1921px) {
-        header ul.desktopNav li {
+        header ul.nav li {
           font-size: 24px;
           margin-right: 36px; } }
-      header ul.desktopNav li#logo {
+      header ul.nav li.logo {
         display: block !important;
         margin-right: 30px; }
         @media (min-width: 1921px) {
-          header ul.desktopNav li#logo {
+          header ul.nav li.logo {
             margin-right: 44px; } }
-        header ul.desktopNav li#logo img {
+        header ul.nav li.logo img {
           display: block;
           width: auto;
           height: 100%; }
+      header ul.nav li.hamburgerBtn {
+        display: block !important;
+        float: right;
+        position: relative;
+        width: 30px;
+        margin: 0;
+        opacity: .75; }
+        header ul.nav li.hamburgerBtn div {
+          position: absolute;
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+                  transform: translateX(-50%);
+          width: 16px;
+          height: 3px;
+          background: black; }
+          header ul.nav li.hamburgerBtn div:nth-child(1) {
+            top: 8px; }
+          header ul.nav li.hamburgerBtn div:nth-child(2) {
+            top: 13px; }
+          header ul.nav li.hamburgerBtn div:nth-child(3) {
+            top: 18px; }
+        @media (min-width: 768px) {
+          header ul.nav li.hamburgerBtn {
+            display: none !important; } }
 
 main {
   width: 100vw;
@@ -827,71 +851,94 @@ main {
   top: 0;
   left: 0;
   z-index: 100; }
+  main #home, main #brands, main #cv, main #portfolio, main #contact {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: .35s opacity ease-in-out;
+    padding-top: 50px; }
+    @media (min-width: 768px) {
+      main #home, main #brands, main #cv, main #portfolio, main #contact {
+        padding-top: 66px; } }
+    @media (min-width: 1921px) {
+      main #home, main #brands, main #cv, main #portfolio, main #contact {
+        padding-top: 84px; } }
+    main #home.horizontal, main #brands.horizontal, main #cv.horizontal, main #portfolio.horizontal, main #contact.horizontal {
+      margin: 10vw;
+      width: 80vw;
+      height: calc(100vh - 20vw); }
+    main #home.vertical, main #brands.vertical, main #cv.vertical, main #portfolio.vertical, main #contact.vertical {
+      margin: 10vh;
+      width: calc(100vw - 20vh);
+      height: 80vh; }
+  main .active {
+    opacity: 1 !important;
+    pointer-events: auto !important; }
 
 #home {
   height: 100%; }
-  #home .content {
-    color: black; }
+  @media (min-width: 768px) {
+    #home .content {
+      position: relative; } }
+  #home .content h1.welcome {
+    margin: 40% 0 0 0;
+    max-width: 480px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    text-align: center; }
     @media (min-width: 768px) {
-      #home .content {
-        position: relative; } }
-    #home .content h1.welcome {
-      margin: 50% 0 0 0;
-      max-width: 480px;
-      font-size: 22px;
-      line-height: 31px;
-      font-weight: 400;
-      text-align: center; }
-      @media (min-width: 768px) {
-        #home .content h1.welcome {
-          margin: 0;
-          font-family: "Montserrat-Thin";
-          font-size: 25px;
-          line-height: 32px;
-          text-align: left; } }
-      @media (min-width: 1921px) {
-        #home .content h1.welcome {
-          font-size: 36px;
-          line-height: 48px;
-          max-width: 600px; } }
-    #home .content h2.shortie {
-      display: none;
-      margin: 40px 0;
-      max-width: 550px;
-      font-family: "Montserrat-Thin";
-      font-size: 17px;
-      font-weight: 400;
-      line-height: 23px; }
-      @media (min-width: 768px) {
-        #home .content h2.shortie {
-          display: block; } }
-      @media (min-width: 1921px) {
-        #home .content h2.shortie {
-          max-width: 700px;
-          font-family: "Montserrat-Thin";
-          font-size: 22px;
-          line-height: 27px; } }
-    #home .content a.btn {
-      position: absolute;
-      bottom: 10vh;
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-              transform: translateX(-50%);
-      font-family: "Montserrat-Medium";
-      font-size: 0.75em;
-      padding: 0.8em 1.5em;
-      background: #202020;
-      border-radius: 6px; }
-      @media (min-width: 768px) {
-        #home .content a.btn {
-          position: static;
-          -webkit-transform: none;
-                  transform: none; } }
+      #home .content h1.welcome {
+        margin: 0;
+        font-family: "Montserrat-Thin";
+        font-size: 25px;
+        line-height: 32px;
+        text-align: left; } }
+    @media (min-width: 1921px) {
+      #home .content h1.welcome {
+        font-size: 36px;
+        line-height: 48px;
+        max-width: 600px; } }
+  #home .content h2.shortie {
+    display: none;
+    margin: 40px 0;
+    max-width: 550px;
+    font-family: "Montserrat-Thin";
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 23px; }
+    @media (min-width: 768px) {
+      #home .content h2.shortie {
+        display: block; } }
+    @media (min-width: 1921px) {
+      #home .content h2.shortie {
+        max-width: 700px;
+        font-family: "Montserrat-Thin";
+        font-size: 22px;
+        line-height: 27px; } }
+  #home .content a.btn {
+    width: 150px;
+    text-align: center;
+    position: absolute;
+    bottom: 10vh;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    font-family: "Montserrat-Medium";
+    font-size: 0.75em;
+    padding: 0.8em 0;
+    background: #202020;
+    border-radius: 6px; }
+    @media (min-width: 768px) {
+      #home .content a.btn {
+        position: static;
+        -webkit-transform: none;
+                transform: none; } }
   #home .bgImg {
     position: absolute;
     z-index: 1000;
-    top: 0;
-    right: 0;
+    top: -10vh;
+    right: -10vh;
     width: 100vw;
     height: 100vh;
     background-image: url("../img/bgProfile.png");
@@ -902,6 +949,8 @@ main {
     opacity: 1; }
     @media (min-width: 768px) {
       #home .bgImg {
+        top: -10vw;
+        right: -10vw;
         background-size: auto 100%;
         background-position: top right;
         opacity: .65; } }
@@ -909,14 +958,8 @@ main {
 #brands {
   height: 100%;
   overflow: auto;
-  text-align: center;
-  padding-top: 50px; }
-  @media (min-width: 768px) {
-    #brands {
-      padding-top: 66px; } }
-  @media (min-width: 1921px) {
-    #brands {
-      padding-top: 84px; } }
+  position: relative;
+  text-align: center; }
   #brands .container {
     display: inline-block;
     position: relative; }
@@ -928,14 +971,102 @@ main {
       margin: 0; }
       @media (min-width: 768px) {
         #brands .container .item {
+          width: 130px;
+          height: 130px;
+          line-height: 130px; } }
+      @media (min-width: 1200px) {
+        #brands .container .item {
           width: 160px;
           height: 160px;
           line-height: 160px; } }
+      @media (min-width: 1921px) {
+        #brands .container .item {
+          width: 280px;
+          height: 280px;
+          line-height: 280px; } }
       #brands .container .item img {
         display: block;
         margin: 0 auto;
         width: auto;
         height: 100%; }
+  #brands .note {
+    font-size: 14px;
+    line-height: 1.4em; }
+    @media (min-width: 768px) {
+      #brands .note {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: left; } }
+
+#cv {
+  overflow: auto; }
+  #cv .block {
+    float: left;
+    width: 33.33%;
+    font-size: 0.85em; }
+    #cv .block h3 {
+      margin: 30px 0;
+      font-family: "Montserrat-Medium"; }
+    #cv .block p {
+      line-height: 1.75em; }
+    #cv .block .list {
+      float: left;
+      width: 50%; }
+      #cv .block .list h5 {
+        display: inline-block;
+        margin: 0;
+        font-size: 1.25em;
+        border-bottom: 1px solid black; }
+    #cv .block .job {
+      height: 80px;
+      margin: 20px 0; }
+      #cv .block .job .info {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        float: left;
+        width: 65%; }
+        #cv .block .job .info .company {
+          font-family: "Montserrat-Medium";
+          font-size: 1.2em;
+          margin: 6px 0; }
+        #cv .block .job .info .title {
+          margin: 6px 0; }
+        #cv .block .job .info .timeframe {
+          margin: 6px 0;
+          font-size: 0.8em; }
+      #cv .block .job .logo {
+        float: right;
+        width: 30%;
+        height: inherit; }
+        #cv .block .job .logo img.theking {
+          display: block;
+          margin: 0 auto;
+          width: auto;
+          height: 100%; }
+        #cv .block .job .logo img.noluyo {
+          display: block;
+          margin: 0 auto;
+          position: relative;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+                  transform: translateY(-50%);
+          width: 70%;
+          height: auto; }
+        #cv .block .job .logo img.empire {
+          display: block;
+          margin: 10% auto;
+          width: auto;
+          height: 60%; }
+    #cv .block:nth-child(1) {
+      padding-right: 45px; }
+    #cv .block:nth-child(2) {
+      padding-left: 22.5px;
+      padding-right: 22.5px; }
+    #cv .block:nth-child(3) {
+      padding-left: 45px; }
 
 .mCustomScrollbar {
   -ms-touch-action: pinch-zoom;
