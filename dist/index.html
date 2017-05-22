@@ -99,12 +99,12 @@
           <div class="item"><img src="img/brands/1v1y.png"></div>
         </div>
       </div>
-      <div class="active" id="cv">
+      <div id="cv">
         <div class="block">
           <h3>About Me</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus ipsum convallis orci congue finibus. Aliquam pharetra tortor scelerisque elit aliquet ullamcorper nec vitae risus. Nam luctus massa lacinia consectetur aliquet. Pellentesque nec odio diam. Etiam lorem metus, accumsan in rhoncus ac, fermentum vel arcu. Morbi id dictum libero, ut lobortis eros. Nulla in sodales quam. Sed rutrum, elit vitae venenatis ultricies, elit nisl egestas diam, non tristique nisl felis eu sem. Vivamus vel viverra nibh. Aenean tincidunt tellus ac aliquet tempor. Curabitur et metus bibendum, euismod libero id, commodo sem. Phasellus commodo odio vestibulum odio cursus, non placerat nulla pulvinar.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus ipsum convallis orci congue finibus. Aliquam pharetra tortor scelerisque elit aliquet ullamcorper nec vitae risus. Nam luctus massa lacinia consectetur aliquet. Pellentesque nec odio diam. Etiam lorem metus, accumsan in rhoncus ac, fermentum vel arcu. Morbi id dictum libero, ut lobortis eros. Nulla in sodales quam. Sed rutrum, elit vitae venenatis ultricies, elit nisl egestas diam, non tristique nisl felis eu sem. Vivamus vel viverra nibh. Aenean tincidunt tellus ac aliquet tempor.</p>
           <p>Aenean risus elit, consectetur at cursus quis, rhoncus quis ex. Quisque sed imperdiet ipsum, sit amet tincidunt tellus. Donec at dui vitae nunc tempor ornare et tincidunt arcu. Suspendisse mattis luctus tellus, bibendum sollicitudin nisl cursus a. Suspendisse blandit massa eu nisi varius, et consectetur quam scelerisque. Fusce molestie lectus non consequat convallis. Nam rutrum mauris in molestie dignissim. Pellentesque lobortis augue eros, vitae consectetur nibh tincidunt sed. Vivamus eget risus posuere, congue nulla sodales, rutrum quam.</p>
-          <p>Vestibulum finibus ullamcorper nulla, ut mattis urna luctus non. Nulla hendrerit ipsum augue, at rutrum dolor volutpat a. Integer suscipit tristique sem, vel faucibus orci facilisis et. Phasellus rutrum ante dapibus mi dictum sodales. Praesent cursus arcu eu orci hendrerit condimentum. Quisque a rhoncus ipsum, quis vehicula justo. Proin ut ultricies dolor. Suspendisse interdum ante eget risus aliquam, at sodales tellus semper. Mauris est justo, bibendum ac augue sit amet, tincidunt ultricies turpis. Fusce consequat rutrum est eu iaculis. Suspendisse non est ac nibh accumsan varius ac sed mi. Aliquam mattis, massa non egestas consequat, leo ex vulputate est, a molestie elit tellus id nisi.</p>
+          <p>Vestibulum finibus ullamcorper nulla, ut mattis urna luctus non. Nulla hendrerit ipsum augue, at rutrum dolor volutpat a. Integer suscipit tristique sem, vel faucibus orci facilisis et. Phasellus rutrum ante dapibus mi dictum sodales. Praesent cursus arcu eu orci hendrerit condimentum. Quisque a rhoncus ipsum, quis vehicula justo. Proin ut ultricies dolor. Suspendisse interdum ante eget risus aliquam, at sodales tellus semper.</p>
         </div>
         <div class="block">
           <h3>Skills</h3>
@@ -131,6 +131,29 @@
               <li>NodeJS</li>
               <li>Gulp & Grunt</li>
             </ul>
+          </div>
+          <div class="seperator"></div>
+          <h3>Academic</h3>
+          <div class="school">
+            <div class="name">Istanbul Ticaret Üniversitesi</div>
+            <div class="container">
+              <div class="type">College - Visual Communication</div>
+              <div class="timeframe">May '09 - Aug '15</div>
+            </div>
+          </div>
+          <div class="school">
+            <div class="name">Yelkikanat Anadolu Meslek Lisesi</div>
+            <div class="container">
+              <div class="type">Vocational High School</div>
+              <div class="timeframe">Apr '07 - May '13</div>
+            </div>
+          </div>
+          <div class="school">
+            <div class="name">Eyüboğlu Koleji</div>
+            <div class="container">
+              <div class="type">Primary Education</div>
+              <div class="timeframe">May '09 - Aug '15</div>
+            </div>
           </div>
         </div>
         <div class="block">
@@ -169,6 +192,34 @@
           </div>
         </div>
       </div>
+      <div class="active" id="portfolio">
+        <div class="container">
+          <div class="item">
+            <div class="element"></div>
+          </div>
+          <div class="item">
+            <div class="element"></div>
+          </div>
+          <div class="item">
+            <div class="element"></div>
+          </div>
+          <div class="item">
+            <div class="element"></div>
+          </div>
+          <div class="item">
+            <div class="element"></div>
+          </div>
+          <div class="item2">
+            <div class="element"></div>
+          </div>
+          <div class="item">
+            <div class="element"></div>
+          </div>
+          <div class="item">
+            <div class="element"></div>
+          </div>
+        </div>
+      </div>
     </main>
     <script src="script/jquery.js"></script>
     <script src="script/main.js"></script>
@@ -183,10 +234,6 @@
       				theme:"dark"
       			});
       
-      			$("#cv").mCustomScrollbar({
-      				theme:"dark"
-      			});
-      
       		});
       
       	})(jQuery);
@@ -198,6 +245,10 @@
       	$(window).on("load",function(){
       
       		$("#cv").mCustomScrollbar({
+      			theme:"dark"
+      		});
+      
+      		$("#portfolio .container").mCustomScrollbar({
       			theme:"dark"
       		});
       

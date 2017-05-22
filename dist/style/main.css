@@ -864,13 +864,23 @@ main {
       main #home, main #brands, main #cv, main #portfolio, main #contact {
         padding-top: 84px; } }
     main #home.horizontal, main #brands.horizontal, main #cv.horizontal, main #portfolio.horizontal, main #contact.horizontal {
-      margin: 10vw;
-      width: 80vw;
-      height: calc(100vh - 20vw); }
+      margin: 5vw;
+      width: 90vw;
+      height: calc(100vh - 10vw); }
+      @media (min-width: 768px) {
+        main #home.horizontal, main #brands.horizontal, main #cv.horizontal, main #portfolio.horizontal, main #contact.horizontal {
+          margin: 10vw;
+          width: 80vw;
+          height: calc(100vh - 20vw); } }
     main #home.vertical, main #brands.vertical, main #cv.vertical, main #portfolio.vertical, main #contact.vertical {
-      margin: 10vh;
-      width: calc(100vw - 20vh);
-      height: 80vh; }
+      margin: 5vh;
+      width: calc(100vw - 10vh);
+      height: 90vh; }
+      @media (min-width: 768px) {
+        main #home.vertical, main #brands.vertical, main #cv.vertical, main #portfolio.vertical, main #contact.vertical {
+          margin: 10vh;
+          width: calc(100vw - 20vh);
+          height: 80vh; } }
   main .active {
     opacity: 1 !important;
     pointer-events: auto !important; }
@@ -1003,8 +1013,30 @@ main {
   overflow: auto; }
   #cv .block {
     float: left;
-    width: 33.33%;
+    width: 100%;
     font-size: 0.85em; }
+    @media (min-width: 900px) {
+      #cv .block:nth-child(1) {
+        width: 100%;
+        padding-right: 45px; } }
+    @media (min-width: 1200px) {
+      #cv .block:nth-child(1) {
+        width: 33.33%; } }
+    @media (min-width: 900px) {
+      #cv .block:nth-child(2) {
+        width: 50%;
+        padding-left: 22.5px;
+        padding-right: 22.5px; } }
+    @media (min-width: 1200px) {
+      #cv .block:nth-child(2) {
+        width: 33.33%; } }
+    @media (min-width: 900px) {
+      #cv .block:nth-child(3) {
+        width: 50%;
+        padding-left: 45px; } }
+    @media (min-width: 1200px) {
+      #cv .block:nth-child(3) {
+        width: 33.33%; } }
     #cv .block h3 {
       margin: 30px 0;
       font-family: "Montserrat-Medium"; }
@@ -1012,12 +1044,17 @@ main {
       line-height: 1.75em; }
     #cv .block .list {
       float: left;
-      width: 50%; }
+      width: 100%; }
+      @media (min-width: 768px) {
+        #cv .block .list {
+          width: 50%; } }
       #cv .block .list h5 {
         display: inline-block;
         margin: 0;
         font-size: 1.25em;
         border-bottom: 1px solid black; }
+      #cv .block .list ul {
+        line-height: 1.25em; }
     #cv .block .job {
       height: 80px;
       margin: 20px 0; }
@@ -1040,33 +1077,71 @@ main {
       #cv .block .job .logo {
         float: right;
         width: 30%;
-        height: inherit; }
-        #cv .block .job .logo img.theking {
+        height: inherit;
+        position: relative; }
+        #cv .block .job .logo img {
           display: block;
-          margin: 0 auto;
-          width: auto;
-          height: 100%; }
-        #cv .block .job .logo img.noluyo {
-          display: block;
-          margin: 0 auto;
-          position: relative;
+          position: absolute;
           top: 50%;
-          -webkit-transform: translateY(-50%);
-                  transform: translateY(-50%);
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+                  transform: translate(-50%, -50%); }
+        #cv .block .job .logo img.theking {
+          width: auto;
+          height: 80%; }
+        #cv .block .job .logo img.noluyo {
           width: 70%;
           height: auto; }
         #cv .block .job .logo img.empire {
-          display: block;
-          margin: 10% auto;
           width: auto;
-          height: 60%; }
-    #cv .block:nth-child(1) {
-      padding-right: 45px; }
-    #cv .block:nth-child(2) {
-      padding-left: 22.5px;
-      padding-right: 22.5px; }
-    #cv .block:nth-child(3) {
-      padding-left: 45px; }
+          height: 50%; }
+    #cv .block .school {
+      margin-top: 20px;
+      line-height: 1.25em;
+      border-bottom: 1px dotted black; }
+      #cv .block .school:last-of-type {
+        border-bottom: none; }
+      #cv .block .school .name {
+        font-family: "Montserrat-Medium";
+        font-size: 1.25em; }
+      #cv .block .school .container {
+        margin: 12px 0 20px; }
+        #cv .block .school .container:after {
+          content: "";
+          display: table;
+          clear: both; }
+        #cv .block .school .container .type {
+          float: left;
+          width: 60%; }
+        #cv .block .school .container .timeframe {
+          float: right;
+          width: 30%;
+          text-align: right; }
+    #cv .block .seperator {
+      width: 100%;
+      height: 1px;
+      clear: both; }
+
+#portfolio .container {
+  width: calc(100% + 30px);
+  height: calc(100% + 30px);
+  position: relative;
+  left: -15px;
+  overflow: auto; }
+  #portfolio .container .item {
+    display: block;
+    float: left; }
+    #portfolio .container .item.one {
+      width: 25%; }
+    #portfolio .container .item.two {
+      width: 50%; }
+    #portfolio .container .item.three {
+      width: 75%; }
+    #portfolio .container .item .element {
+      width: calc(100% - 30px);
+      height: calc(100% - 30px);
+      margin: 15px;
+      background: black; }
 
 .mCustomScrollbar {
   -ms-touch-action: pinch-zoom;

@@ -148,17 +148,17 @@ html(lang="en")
 
 						img(src="img/brands/1v1y.png")
 
-			#cv.active
+			#cv
 
 				.block
 
 					h3 About Me
 
-					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus ipsum convallis orci congue finibus. Aliquam pharetra tortor scelerisque elit aliquet ullamcorper nec vitae risus. Nam luctus massa lacinia consectetur aliquet. Pellentesque nec odio diam. Etiam lorem metus, accumsan in rhoncus ac, fermentum vel arcu. Morbi id dictum libero, ut lobortis eros. Nulla in sodales quam. Sed rutrum, elit vitae venenatis ultricies, elit nisl egestas diam, non tristique nisl felis eu sem. Vivamus vel viverra nibh. Aenean tincidunt tellus ac aliquet tempor. Curabitur et metus bibendum, euismod libero id, commodo sem. Phasellus commodo odio vestibulum odio cursus, non placerat nulla pulvinar.
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus ipsum convallis orci congue finibus. Aliquam pharetra tortor scelerisque elit aliquet ullamcorper nec vitae risus. Nam luctus massa lacinia consectetur aliquet. Pellentesque nec odio diam. Etiam lorem metus, accumsan in rhoncus ac, fermentum vel arcu. Morbi id dictum libero, ut lobortis eros. Nulla in sodales quam. Sed rutrum, elit vitae venenatis ultricies, elit nisl egestas diam, non tristique nisl felis eu sem. Vivamus vel viverra nibh. Aenean tincidunt tellus ac aliquet tempor.
 
 					p Aenean risus elit, consectetur at cursus quis, rhoncus quis ex. Quisque sed imperdiet ipsum, sit amet tincidunt tellus. Donec at dui vitae nunc tempor ornare et tincidunt arcu. Suspendisse mattis luctus tellus, bibendum sollicitudin nisl cursus a. Suspendisse blandit massa eu nisi varius, et consectetur quam scelerisque. Fusce molestie lectus non consequat convallis. Nam rutrum mauris in molestie dignissim. Pellentesque lobortis augue eros, vitae consectetur nibh tincidunt sed. Vivamus eget risus posuere, congue nulla sodales, rutrum quam.
 
-					p Vestibulum finibus ullamcorper nulla, ut mattis urna luctus non. Nulla hendrerit ipsum augue, at rutrum dolor volutpat a. Integer suscipit tristique sem, vel faucibus orci facilisis et. Phasellus rutrum ante dapibus mi dictum sodales. Praesent cursus arcu eu orci hendrerit condimentum. Quisque a rhoncus ipsum, quis vehicula justo. Proin ut ultricies dolor. Suspendisse interdum ante eget risus aliquam, at sodales tellus semper. Mauris est justo, bibendum ac augue sit amet, tincidunt ultricies turpis. Fusce consequat rutrum est eu iaculis. Suspendisse non est ac nibh accumsan varius ac sed mi. Aliquam mattis, massa non egestas consequat, leo ex vulputate est, a molestie elit tellus id nisi.
+					p Vestibulum finibus ullamcorper nulla, ut mattis urna luctus non. Nulla hendrerit ipsum augue, at rutrum dolor volutpat a. Integer suscipit tristique sem, vel faucibus orci facilisis et. Phasellus rutrum ante dapibus mi dictum sodales. Praesent cursus arcu eu orci hendrerit condimentum. Quisque a rhoncus ipsum, quis vehicula justo. Proin ut ultricies dolor. Suspendisse interdum ante eget risus aliquam, at sodales tellus semper.
 
 				.block
 
@@ -191,6 +191,40 @@ html(lang="en")
 							li Ajax
 							li NodeJS
 							li Gulp & Grunt
+
+					.seperator
+
+					h3 Academic
+
+					.school
+
+						.name Istanbul Ticaret Üniversitesi
+
+						.container
+
+							.type College - Visual Communication
+
+							.timeframe May '09 - Aug '15
+
+					.school
+
+						.name Yelkikanat Anadolu Meslek Lisesi
+
+						.container
+
+							.type Vocational High School
+
+							.timeframe Apr '07 - May '13
+
+					.school
+
+						.name Eyüboğlu Koleji
+
+						.container
+
+							.type Primary Education
+
+							.timeframe May '09 - Aug '15
 
 				.block
 
@@ -244,7 +278,41 @@ html(lang="en")
 
 							img.empire(src="img/jobExp/1v1y.png")
 
+			#portfolio.active
 
+				.container
+
+					.item
+
+						.element
+
+					.item
+
+						.element
+
+					.item
+
+						.element
+
+					.item
+
+						.element
+
+					.item
+
+						.element
+
+					.item2
+
+						.element
+
+					.item
+
+						.element
+
+					.item
+
+						.element
 
 
 
@@ -264,10 +332,6 @@ html(lang="en")
 							theme:"dark"
 						});
 
-						$("#cv").mCustomScrollbar({
-							theme:"dark"
-						});
-
 					});
 
 				})(jQuery);
@@ -279,6 +343,10 @@ html(lang="en")
 				$(window).on("load",function(){
 
 					$("#cv").mCustomScrollbar({
+						theme:"dark"
+					});
+
+					$("#portfolio .container").mCustomScrollbar({
 						theme:"dark"
 					});
 

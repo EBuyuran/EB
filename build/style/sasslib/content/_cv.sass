@@ -8,9 +8,48 @@ $cvGap: 90px
 	.block
 
 		float: left
-		width: 33.33%
+		width: 100%
 
 		font-size: 0.85em
+
+		&:nth-child(1)
+
+			+md
+
+				width: 100%
+
+				padding-right: ($cvGap / 2)
+
+			+lg
+
+				width: 33.33%
+
+		&:nth-child(2)
+
+			+md
+
+				width: 50%
+
+				padding-left: ($cvGap / 4)
+				padding-right: ($cvGap / 4)
+
+			+lg
+
+				width: 33.33%
+
+		&:nth-child(3)
+
+			+md
+
+				width: 50%
+
+				padding-left: ($cvGap / 2)
+
+			+lg
+
+				width: 33.33%
+
+
 
 		h3
 
@@ -24,7 +63,11 @@ $cvGap: 90px
 		.list
 
 			float: left
-			width: 50%
+			width: 100%
+
+			+sm
+
+				width: 50%
 
 			h5
 
@@ -34,6 +77,10 @@ $cvGap: 90px
 				font-size: 1.25em
 
 				border-bottom: 1px solid black
+
+			ul
+
+				line-height: 1.25em
 
 		.job
 
@@ -71,45 +118,71 @@ $cvGap: 90px
 				width: 30%
 				height: inherit
 
+				position: relative
+
+				img
+
+					display: block
+					position: absolute
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+
 				img.theking
 
-					display: block
-					margin: 0 auto
-
 					width: auto
-					height: 100%
+					height: 80%
 
 				img.noluyo
-
-					display: block
-					margin: 0 auto
-
-					position: relative
-					top: 50%
-					transform: translateY(-50%)
 
 					width: 70%
 					height: auto
 
 				img.empire
 
-					display: block
-					margin: 10% auto
-
 					width: auto
-					height: 60%
+					height: 50%
 
+		.school
 
+			margin-top: 20px
+			line-height: 1.25em
 
-		&:nth-child(1)
+			border-bottom: 1px dotted black
 
-			padding-right: ($cvGap / 2)
+			&:last-of-type
 
-		&:nth-child(2)
+				border-bottom: none
 
-			padding-left: ($cvGap / 4)
-			padding-right: ($cvGap / 4)
+			.name
 
-		&:nth-child(3)
+				font-family: $mf-medium
+				font-size: 1.25em
 
-			padding-left: ($cvGap / 2)
+			.container
+
+				margin: 12px 0 20px
+
+				&:after
+
+					content: ""
+					display: table
+					clear: both
+
+				.type
+
+					float: left
+					width: 60%
+
+				.timeframe
+
+					float: right
+					width: 30%
+					text-align: right
+
+		.seperator
+
+			width: 100%
+			height: 1px
+
+			clear: both

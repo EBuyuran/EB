@@ -317,12 +317,14 @@ var EB = {
 				EB.PageLayout.Horizontal("home");
 				EB.PageLayout.Horizontal("brands");
 				EB.PageLayout.Horizontal("cv");
+				EB.PageLayout.Horizontal("portfolio");
 
 			} else {
 
 				EB.PageLayout.Vertical("home");
 				EB.PageLayout.Vertical("brands");
 				EB.PageLayout.Vertical("cv");
+				EB.PageLayout.Horizontal("portfolio");
 
 			}
 
@@ -346,17 +348,39 @@ var EB = {
 
 			if (EB.ScreenSize.Width() > EB.ScreenSize.Height()) {
 
-				document.getElementsByTagName("header")[0].style.top = "10vw";
-				document.getElementsByTagName("header")[0].style.width = "100vw";
-				document.getElementsByTagName("header")[0].style.paddingLeft = "10vw";
-				document.getElementsByTagName("header")[0].style.paddingRight = "10vw";
+				if (EB.ScreenSize.Width() < screenSm) {
+
+					document.getElementsByTagName("header")[0].style.top = "5vw";
+					document.getElementsByTagName("header")[0].style.width = "100vw";
+					document.getElementsByTagName("header")[0].style.paddingLeft = "5vw";
+					document.getElementsByTagName("header")[0].style.paddingRight = "5vw";
+
+				} else {
+
+					document.getElementsByTagName("header")[0].style.top = "10vw";
+					document.getElementsByTagName("header")[0].style.width = "100vw";
+					document.getElementsByTagName("header")[0].style.paddingLeft = "10vw";
+					document.getElementsByTagName("header")[0].style.paddingRight = "10vw";
+
+				}
 
 			} else {
 
-				document.getElementsByTagName("header")[0].style.top = "10vh";
-				document.getElementsByTagName("header")[0].style.width = "100vw";
-				document.getElementsByTagName("header")[0].style.paddingLeft = "10vh";
-				document.getElementsByTagName("header")[0].style.paddingRight = "10vh";
+				if (EB.ScreenSize.Width() < screenSm) {
+
+					document.getElementsByTagName("header")[0].style.top = "5vh";
+					document.getElementsByTagName("header")[0].style.width = "100vw";
+					document.getElementsByTagName("header")[0].style.paddingLeft = "5vh";
+					document.getElementsByTagName("header")[0].style.paddingRight = "5vh";
+
+				} else {
+
+					document.getElementsByTagName("header")[0].style.top = "10vh";
+					document.getElementsByTagName("header")[0].style.width = "100vw";
+					document.getElementsByTagName("header")[0].style.paddingLeft = "10vh";
+					document.getElementsByTagName("header")[0].style.paddingRight = "10vh";
+
+				}
 
 			};
 

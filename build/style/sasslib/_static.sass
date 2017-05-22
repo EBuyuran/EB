@@ -294,17 +294,33 @@ main
 
 		&.horizontal
 
-			margin: 10vw
+			margin: 5vw
 
-			width: 80vw
-			height: calc(100vh - 20vw
+			width: 90vw
+			height: calc(100vh - 10vw)
+
+			+sm
+
+				margin: 10vw
+
+				width: 80vw
+				height: calc(100vh - 20vw)
 
 		&.vertical
 
-			margin: 10vh
+			margin: 5vh
 
-			width: calc(100vw - 20vh)
-			height: 80vh
+			width: calc(100vw - 10vh)
+			height: 90vh
+
+			+sm
+
+				margin: 10vh
+
+				width: calc(100vw - 20vh)
+				height: 80vh
+
+
 
 	.active
 
