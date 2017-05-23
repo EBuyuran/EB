@@ -19,7 +19,7 @@ var EB = {
 	init: function() {
 
 		EB.Background.Gradient();
-		EB.PageLayout.init();
+		EB.PageStaticLayout.init();
 		EB.Background.Stars.OnPageLoad();
 		EB.Hamburger.init();
 		EB.PageContent.init();
@@ -34,7 +34,7 @@ var EB = {
 		init: function() {
 
 			EB.Background.Gradient();
-			EB.PageLayout.init();
+			EB.PageStaticLayout.init();
 			EB.Hamburger.init();
 			EB.PageContent.init();
 
@@ -299,13 +299,27 @@ var EB = {
 
 	},
 
-	PageLayout: {
+	PageStaticLayout: {
 
 		init: function() {
 
-			EB.PageLayout.PageShape();
-			EB.PageLayout.HeaderPadding();
+			EB.PageStaticLayout.PageShape();
+			EB.PageStaticLayout.HeaderPadding();
 
+		},
+
+		RemoveScene: function() {
+
+			var scene = document.getElementById("scene");
+
+			scene.style.opacity = "0";
+
+			setTimeout(function() {
+
+				scene.style.display = "none";
+
+			}, 350);
+			
 		},
 
 		PageShape: function() {
@@ -314,17 +328,19 @@ var EB = {
 
 			if (EB.ScreenSize.Width() > EB.ScreenSize.Height()) {
 
-				EB.PageLayout.Horizontal("home");
-				EB.PageLayout.Horizontal("brands");
-				EB.PageLayout.Horizontal("cv");
-				EB.PageLayout.Horizontal("portfolio");
+				EB.PageStaticLayout.Horizontal("home");
+				EB.PageStaticLayout.Horizontal("brands");
+				EB.PageStaticLayout.Horizontal("cv");
+				EB.PageStaticLayout.Horizontal("portfolio");
+				EB.PageStaticLayout.Horizontal("contact");
 
 			} else {
 
-				EB.PageLayout.Vertical("home");
-				EB.PageLayout.Vertical("brands");
-				EB.PageLayout.Vertical("cv");
-				EB.PageLayout.Horizontal("portfolio");
+				EB.PageStaticLayout.Vertical("home");
+				EB.PageStaticLayout.Vertical("brands");
+				EB.PageStaticLayout.Vertical("cv");
+				EB.PageStaticLayout.Vertical("portfolio");
+				EB.PageStaticLayout.Vertical("contact");
 
 			}
 
@@ -350,17 +366,17 @@ var EB = {
 
 				if (EB.ScreenSize.Width() < screenSm) {
 
-					document.getElementsByTagName("header")[0].style.top = "5vw";
+					document.getElementsByTagName("header")[0].style.top = "8vw";
 					document.getElementsByTagName("header")[0].style.width = "100vw";
-					document.getElementsByTagName("header")[0].style.paddingLeft = "5vw";
-					document.getElementsByTagName("header")[0].style.paddingRight = "5vw";
+					document.getElementsByTagName("header")[0].style.paddingLeft = "8vw";
+					document.getElementsByTagName("header")[0].style.paddingRight = "8vw";
 
 				} else {
 
-					document.getElementsByTagName("header")[0].style.top = "10vw";
+					document.getElementsByTagName("header")[0].style.top = "8vw";
 					document.getElementsByTagName("header")[0].style.width = "100vw";
-					document.getElementsByTagName("header")[0].style.paddingLeft = "10vw";
-					document.getElementsByTagName("header")[0].style.paddingRight = "10vw";
+					document.getElementsByTagName("header")[0].style.paddingLeft = "8vw";
+					document.getElementsByTagName("header")[0].style.paddingRight = "8vw";
 
 				}
 
@@ -368,17 +384,17 @@ var EB = {
 
 				if (EB.ScreenSize.Width() < screenSm) {
 
-					document.getElementsByTagName("header")[0].style.top = "5vh";
+					document.getElementsByTagName("header")[0].style.top = "8vh";
 					document.getElementsByTagName("header")[0].style.width = "100vw";
-					document.getElementsByTagName("header")[0].style.paddingLeft = "5vh";
-					document.getElementsByTagName("header")[0].style.paddingRight = "5vh";
+					document.getElementsByTagName("header")[0].style.paddingLeft = "8vh";
+					document.getElementsByTagName("header")[0].style.paddingRight = "8vh";
 
 				} else {
 
-					document.getElementsByTagName("header")[0].style.top = "10vh";
+					document.getElementsByTagName("header")[0].style.top = "8vh";
 					document.getElementsByTagName("header")[0].style.width = "100vw";
-					document.getElementsByTagName("header")[0].style.paddingLeft = "10vh";
-					document.getElementsByTagName("header")[0].style.paddingRight = "10vh";
+					document.getElementsByTagName("header")[0].style.paddingLeft = "8vh";
+					document.getElementsByTagName("header")[0].style.paddingRight = "8vh";
 
 				}
 
@@ -545,7 +561,7 @@ var EB = {
 		init: function() {
 
 			EB.PageContent.Home.init();
-			EB.PageContent.Brands.init();
+			EB.PageContent.Portfolio.init();
 
 		},
 
@@ -555,10 +571,11 @@ var EB = {
 
 				// This complicated function centers the welcome message exatcly to the vertical center of the page and rest of the content below it.
 
-				var welcome, welcomeHeight, calculate;
+				var welcome, welcomeHeight, calculate, profileImg;
 
 				welcome = home.getElementsByClassName("welcome")[0];
 				welcomeHeight = welcome.offsetHeight;
+				profileImg = document.getElementById("home").getElementsByClassName("bgImg")[0];
 
 				if (EB.ScreenSize.Width() > EB.ScreenSize.Height()) {
 
@@ -576,27 +593,32 @@ var EB = {
 
 		},
 
-		Brands: {
+		Portfolio: {
 
 			init: function() {
 
-				var brands, brandsHeight, container, containerHeight, calculate;
+				var portfolio, portfolioWidth, itemHeight, itemList, itemCount;
 
-				brands = document.getElementById("brands");
-				brandsHeight = brands.offsetHeight;
+				portfolio = document.getElementById("portfolio");
+				portfolioWidth = portfolio.offsetWidth;
+				itemHeight = portfolioWidth / 4;
 
-				container = brands.getElementsByClassName("container")[0];
-				containerHeight = container.offsetHeight;
+				// 30px is the margin value;
 
-				if (brandsHeight > containerHeight && EB.ScreenSize.Width() > screenSm) {
+				itemList = portfolio.getElementsByClassName("item");
+				itemCount = itemList.length;
 
-					calculate = (brandsHeight * 0.5) - containerHeight;
+				for (var i = 0; i < itemCount; i++) {
 
-					container.style.top = calculate + "px";
+					if (EB.ScreenSize.Width() > screenSm) {
 
-				} else {
+						itemList[i].style.height = itemHeight + "px";
 
-					container.setAttribute("style", "");
+					} else {
+
+						itemList[i].setAttribute("style", "");
+
+					}
 
 				}
 
@@ -609,3 +631,9 @@ var EB = {
 };
 
 EB.init();
+
+setTimeout(function() {
+
+	EB.PageStaticLayout.RemoveScene();
+
+}, 1000);

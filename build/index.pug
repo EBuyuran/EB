@@ -10,6 +10,7 @@ html(lang="en")
 
 	body
 
+		#scene
 		#background
 		#stars
 
@@ -106,7 +107,7 @@ html(lang="en")
 
 		main
 
-			#home
+			#home.active
 
 				.content
 
@@ -119,8 +120,6 @@ html(lang="en")
 				.bgImg
 
 			#brands
-
-				.note Aliquam erat volutpat. Vestibulum convallis viverra ante quis viverra. Praesent at libero #[span.mf-medium thekingCCA], viverra nunc eu, posuere elit.
 
 				.container
 
@@ -147,6 +146,8 @@ html(lang="en")
 					.item
 
 						img(src="img/brands/1v1y.png")
+
+				.note Aliquam erat volutpat. Vestibulum convallis viverra ante quis viverra. Praesent at libero #[span.mf-medium thekingCCA].
 
 			#cv
 
@@ -278,41 +279,67 @@ html(lang="en")
 
 							img.empire(src="img/jobExp/1v1y.png")
 
-			#portfolio.active
+			#portfolio
 
 				.container
 
-					.item
+					.item.one
 
 						.element
 
-					.item
+							img(src="https://dummyimage.com/720x720/000/fff")
+
+					.item.one
 
 						.element
 
-					.item
+							img(src="https://dummyimage.com/720x720/000/fff")
+
+					.item.one
 
 						.element
 
-					.item
+							img(src="https://dummyimage.com/720x720/000/fff")
+
+					.item.one
 
 						.element
 
-					.item
+							img(src="https://dummyimage.com/720x720/000/fff")
+
+					.item.one
 
 						.element
 
-					.item2
+							img(src="https://dummyimage.com/720x720/000/fff")
+
+					.item.two
 
 						.element
 
-					.item
+							img(src="https://dummyimage.com/1440x690/000/fff")
+
+					.item.one
 
 						.element
 
-					.item
+							img(src="https://dummyimage.com/720x720/000/fff")
+
+					.item.three
 
 						.element
+
+							img(src="https://dummyimage.com/2160x682/000/fff")
+
+					.item.one
+
+						.element
+
+							img(src="https://dummyimage.com/720x720/000/fff")
+
+
+
+			#contact
 
 
 
@@ -328,9 +355,9 @@ html(lang="en")
 
 					$(window).on("load",function(){
 
-						$("#brands").mCustomScrollbar({
-							theme:"dark"
-						});
+					//	$("#brands .container").mCustomScrollbar({
+					//		theme:"dark"
+					//	});
 
 					});
 
@@ -347,6 +374,10 @@ html(lang="en")
 					});
 
 					$("#portfolio .container").mCustomScrollbar({
+						theme:"dark"
+					});
+
+					$("#brands .container").mCustomScrollbar({
 						theme:"dark"
 					});
 

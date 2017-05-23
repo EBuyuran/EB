@@ -9,6 +9,7 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]-->
   </head>
   <body>
+    <div id="scene"></div>
     <div id="background"></div>
     <div id="stars"></div>
     <div id="hamburger">
@@ -81,7 +82,7 @@
       </ul>
     </header>
     <main>
-      <div id="home">
+      <div class="active" id="home">
         <div class="content">
           <h1 class="welcome">Hey there, I’m  <span class="mf-medium">Efe Buyuran</span>, and I’m a  <span class="mf-medium">Front-End Developer</span> from <span class="mf-medium">Istanbul</span> with <span class="mf-medium">10</span> years of experience.</h1>
           <h2 class="shortie">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratone voluptatem sequi nesciunt.</h2><a class="btn">VIEW MY WORK</a>
@@ -89,7 +90,6 @@
         <div class="bgImg"></div>
       </div>
       <div id="brands">
-        <div class="note">Aliquam erat volutpat. Vestibulum convallis viverra ante quis viverra. Praesent at libero <span class="mf-medium">thekingCCA</span>, viverra nunc eu, posuere elit.</div>
         <div class="container">
           <div class="item"><img src="img/brands/hyundai.png"></div>
           <div class="item"><img src="img/brands/huawei.png"></div>
@@ -98,6 +98,7 @@
           <div class="item"><img src="img/brands/noluyo.png"></div>
           <div class="item"><img src="img/brands/1v1y.png"></div>
         </div>
+        <div class="note">Aliquam erat volutpat. Vestibulum convallis viverra ante quis viverra. Praesent at libero <span class="mf-medium">thekingCCA</span>.</div>
       </div>
       <div id="cv">
         <div class="block">
@@ -192,34 +193,38 @@
           </div>
         </div>
       </div>
-      <div class="active" id="portfolio">
+      <div id="portfolio">
         <div class="container">
-          <div class="item">
-            <div class="element"></div>
+          <div class="item one">
+            <div class="element"><img src="https://dummyimage.com/720x720/000/fff"></div>
           </div>
-          <div class="item">
-            <div class="element"></div>
+          <div class="item one">
+            <div class="element"><img src="https://dummyimage.com/720x720/000/fff"></div>
           </div>
-          <div class="item">
-            <div class="element"></div>
+          <div class="item one">
+            <div class="element"><img src="https://dummyimage.com/720x720/000/fff"></div>
           </div>
-          <div class="item">
-            <div class="element"></div>
+          <div class="item one">
+            <div class="element"><img src="https://dummyimage.com/720x720/000/fff"></div>
           </div>
-          <div class="item">
-            <div class="element"></div>
+          <div class="item one">
+            <div class="element"><img src="https://dummyimage.com/720x720/000/fff"></div>
           </div>
-          <div class="item2">
-            <div class="element"></div>
+          <div class="item two">
+            <div class="element"><img src="https://dummyimage.com/1440x690/000/fff"></div>
           </div>
-          <div class="item">
-            <div class="element"></div>
+          <div class="item one">
+            <div class="element"><img src="https://dummyimage.com/720x720/000/fff"></div>
           </div>
-          <div class="item">
-            <div class="element"></div>
+          <div class="item three">
+            <div class="element"><img src="https://dummyimage.com/2160x682/000/fff"></div>
+          </div>
+          <div class="item one">
+            <div class="element"><img src="https://dummyimage.com/720x720/000/fff"></div>
           </div>
         </div>
       </div>
+      <div id="contact"></div>
     </main>
     <script src="script/jquery.js"></script>
     <script src="script/main.js"></script>
@@ -230,9 +235,9 @@
       
       		$(window).on("load",function(){
       
-      			$("#brands").mCustomScrollbar({
-      				theme:"dark"
-      			});
+      		//	$("#brands .container").mCustomScrollbar({
+      		//		theme:"dark"
+      		//	});
       
       		});
       
@@ -249,6 +254,10 @@
       		});
       
       		$("#portfolio .container").mCustomScrollbar({
+      			theme:"dark"
+      		});
+      
+      		$("#brands .container").mCustomScrollbar({
       			theme:"dark"
       		});
       

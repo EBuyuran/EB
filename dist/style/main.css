@@ -631,6 +631,18 @@ table {
   .l11-right {
     padding-right: 91.66%; } }
 
+#scene {
+  position: fixed;
+  z-index: 9999999;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  opacity: 1;
+  transition: .35s opacity ease-in-out; }
+  #scene.gone {
+    opacity: 0; }
+
 #background {
   position: fixed;
   top: 50%;
@@ -693,15 +705,15 @@ table {
     top: 0;
     left: 0;
     width: 100vw;
-    padding: 10vh;
+    padding: 8vh;
     background: #202020; }
     @media (min-width: 768px) {
       #hamburger .mobileNav {
         display: none; } }
     #hamburger .mobileNav #closeHamburger {
       position: absolute;
-      top: 10vh;
-      right: 10vh;
+      top: 8vh;
+      right: 8vh;
       z-index: 300;
       width: 20px;
       height: 20px; }
@@ -724,6 +736,7 @@ table {
       position: relative;
       width: 70vw;
       color: white;
+      font-size: .9em;
       line-height: 1.35em; }
       #hamburger ul li:first-child {
         margin-top: 0; }
@@ -864,23 +877,23 @@ main {
       main #home, main #brands, main #cv, main #portfolio, main #contact {
         padding-top: 84px; } }
     main #home.horizontal, main #brands.horizontal, main #cv.horizontal, main #portfolio.horizontal, main #contact.horizontal {
-      margin: 5vw;
-      width: 90vw;
-      height: calc(100vh - 10vw); }
+      margin: 8vw;
+      width: 84vw;
+      height: calc(100vh - 8vw); }
       @media (min-width: 768px) {
         main #home.horizontal, main #brands.horizontal, main #cv.horizontal, main #portfolio.horizontal, main #contact.horizontal {
-          margin: 10vw;
-          width: 80vw;
-          height: calc(100vh - 20vw); } }
+          margin: 8vw;
+          width: 84vw;
+          height: calc(100vh - 16vw); } }
     main #home.vertical, main #brands.vertical, main #cv.vertical, main #portfolio.vertical, main #contact.vertical {
-      margin: 5vh;
-      width: calc(100vw - 10vh);
-      height: 90vh; }
+      margin: 8vh;
+      width: calc(100vw - 8vh);
+      height: 84vh; }
       @media (min-width: 768px) {
         main #home.vertical, main #brands.vertical, main #cv.vertical, main #portfolio.vertical, main #contact.vertical {
-          margin: 10vh;
-          width: calc(100vw - 20vh);
-          height: 80vh; } }
+          margin: 8vh;
+          width: calc(100vw - 16vh);
+          height: 84vh; } }
   main .active {
     opacity: 1 !important;
     pointer-events: auto !important; }
@@ -947,8 +960,8 @@ main {
   #home .bgImg {
     position: absolute;
     z-index: 1000;
-    top: -10vh;
-    right: -10vh;
+    top: -8vh;
+    right: -8vh;
     width: 100vw;
     height: 100vh;
     background-image: url("../img/bgProfile.png");
@@ -959,23 +972,32 @@ main {
     opacity: 1; }
     @media (min-width: 768px) {
       #home .bgImg {
-        top: -10vw;
-        right: -10vw;
+        top: -8vw;
+        right: -8vw;
         background-size: auto 100%;
         background-position: top right;
         opacity: .65; } }
 
 #brands {
   height: 100%;
-  overflow: auto;
-  position: relative;
-  text-align: center; }
+  position: relative; }
   #brands .container {
-    display: inline-block;
-    position: relative; }
+    display: block;
+    position: relative;
+    overflow: auto;
+    max-width: 100%;
+    max-height: 80%;
+    text-align: center; }
+    @media (min-width: 768px) {
+      #brands .container {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+        max-height: 100%; } }
     #brands .container .item {
       display: inline-block;
-      width: 100%;
+      width: 50%;
       height: 120px;
       line-height: 120px;
       margin: 0; }
@@ -983,12 +1005,14 @@ main {
         #brands .container .item {
           width: 130px;
           height: 130px;
-          line-height: 130px; } }
+          line-height: 130px;
+          padding: 10px; } }
       @media (min-width: 1200px) {
         #brands .container .item {
           width: 160px;
           height: 160px;
-          line-height: 160px; } }
+          line-height: 160px;
+          padding: 20px; } }
       @media (min-width: 1921px) {
         #brands .container .item {
           width: 280px;
@@ -1000,13 +1024,18 @@ main {
         width: auto;
         height: 100%; }
   #brands .note {
-    font-size: 14px;
-    line-height: 1.4em; }
+    width: 80%;
+    margin: 20px auto;
+    font-size: 12px;
+    line-height: 1.4em;
+    text-align: center; }
     @media (min-width: 768px) {
       #brands .note {
         position: absolute;
         bottom: 0;
         left: 0;
+        margin: 0;
+        font-size: 14px;
         text-align: left; } }
 
 #cv {
@@ -1123,25 +1152,53 @@ main {
       clear: both; }
 
 #portfolio .container {
-  width: calc(100% + 30px);
-  height: calc(100% + 30px);
+  width: 100%;
+  height: 100%;
   position: relative;
-  left: -15px;
   overflow: auto; }
+  @media (min-width: 768px) {
+    #portfolio .container {
+      width: calc(100% + 30px);
+      height: calc(100% + 30px);
+      left: -15px; } }
   #portfolio .container .item {
     display: block;
-    float: left; }
+    float: left;
+    margin: 5px 0; }
+    @media (min-width: 768px) {
+      #portfolio .container .item {
+        margin: 0; } }
     #portfolio .container .item.one {
-      width: 25%; }
+      width: 100%; }
+      @media (min-width: 768px) {
+        #portfolio .container .item.one {
+          width: 25%; } }
     #portfolio .container .item.two {
-      width: 50%; }
+      width: 100%; }
+      @media (min-width: 768px) {
+        #portfolio .container .item.two {
+          width: 50%; } }
     #portfolio .container .item.three {
-      width: 75%; }
+      width: 100%; }
+      @media (min-width: 768px) {
+        #portfolio .container .item.three {
+          width: 75%; } }
+    #portfolio .container .item.four {
+      width: 100%; }
+      @media (min-width: 768px) {
+        #portfolio .container .item.four {
+          width: 100%; } }
     #portfolio .container .item .element {
-      width: calc(100% - 30px);
-      height: calc(100% - 30px);
-      margin: 15px;
-      background: black; }
+      width: 100%;
+      height: 100%; }
+      @media (min-width: 768px) {
+        #portfolio .container .item .element {
+          width: calc(100% - 30px);
+          height: calc(100% - 30px);
+          margin: 15px; } }
+      #portfolio .container .item .element img {
+        width: 100%;
+        height: auto; }
 
 .mCustomScrollbar {
   -ms-touch-action: pinch-zoom;
