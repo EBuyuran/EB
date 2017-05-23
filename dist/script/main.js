@@ -632,8 +632,10 @@ var EB = {
 
 EB.init();
 
-setTimeout(function() {
+window.addEventListener("load", function() {
+
+	// Show website when page fully loads.
 
 	EB.PageStaticLayout.RemoveScene();
 
-}, 1000);
+});
