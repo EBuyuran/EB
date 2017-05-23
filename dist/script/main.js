@@ -308,15 +308,15 @@ var EB = {
 
 		},
 
-		RemoveScene: function() {
+		RemoveOverlay: function() {
 
-			var scene = document.getElementById("scene");
+			var overlay = document.getElementById("overlay");
 
-			scene.style.opacity = "0";
+			overlay.style.opacity = "0";
 
 			setTimeout(function() {
 
-				scene.style.display = "none";
+				overlay.style.display = "none";
 
 			}, 350);
 			
@@ -636,6 +636,6 @@ window.addEventListener("load", function() {
 
 	// Show website when page fully loads.
 
-	EB.PageStaticLayout.RemoveScene();
+	EB.PageStaticLayout.RemoveOverlay();
 
 });
