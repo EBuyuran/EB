@@ -44,6 +44,8 @@ $headerHeightUl: 64px
 			width: 20px
 			height: 20px
 
+			cursor: pointer
+
 			div
 
 				width: 16px
@@ -75,6 +77,8 @@ $headerHeightUl: 64px
 			color: white
 			font-size: .9em
 			line-height: 1.35em
+
+			cursor: pointer
 
 			&:first-child
 
@@ -282,43 +286,47 @@ main
 
 		transition: .35s opacity ease-in-out
 
-		padding-top: ($headerHeightMb + 20px)
-
-		+sm
-
-			padding-top: ($headerHeightSm + 20px)
-
-		+ul
-
-			padding-top: ($headerHeightUl + 20px)
-
 		&.horizontal
 
 			margin: 8vw
 
 			width: 84vw
-			height: calc(100vh - 16vw)
+			height: calc((100vh - 16vw) - (#{$headerHeightMb} + 20px))
+
+			margin-top: calc(8vw + (#{$headerHeightMb} + 20px))
 
 			+sm
 
-				margin: 8vw
+				height: calc((100vh - 16vw) - (#{$headerHeightSm} + 20px))
 
-				width: 84vw
-				height: calc(100vh - 16vw)
+				margin-top: calc(8vw + (#{$headerHeightSm} + 20px))
+
+			+ul
+
+				height: calc((100vh - 16vw) - (#{$headerHeightUl} + 20px))
+
+				margin-top: calc(8vw + (#{$headerHeightUl} + 20px))
 
 		&.vertical
 
 			margin: 8vh
 
 			width: calc(100vw - 16vh)
-			height: 84vh
+			height: calc(84vh - (#{$headerHeightMb} + 20px))
+
+			margin-top: calc(8vh + (#{$headerHeightMb} + 20px))
 
 			+sm
 
-				margin: 8vh
+				height: calc(84vw - (#{$headerHeightSm} + 20px))
 
-				width: calc(100vw - 16vh)
-				height: 84vh
+				margin-top: calc(8vw + (#{$headerHeightSm} + 20px))
+
+			+ul
+
+				height: calc(84vw - (#{$headerHeightUl} + 20px))
+
+				margin-top: calc(8vw + (#{$headerHeightUl} + 20px))
 
 
 

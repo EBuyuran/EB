@@ -27,7 +27,6 @@ html(lang="en")
 
 					li.home.active
 
-
 						span home
 
 						.highlight
@@ -344,41 +343,3 @@ html(lang="en")
 
 
 		include puglib/bottom.pug
-
-		script.
-
-			if (EB.ScreenSize.Width() < 768) {
-
-				(function($){
-
-					$(window).on("load",function(){
-
-					//	$("#brands .container").mCustomScrollbar({
-					//		theme:"dark"
-					//	});
-
-					});
-
-				})(jQuery);
-
-			}
-
-			(function($){
-
-				$(window).on("load",function(){
-
-					$("#cv").mCustomScrollbar({
-						theme:"dark"
-					});
-
-					$("#portfolio .container").mCustomScrollbar({
-						theme:"dark"
-					});
-
-					$("#brands .container").mCustomScrollbar({
-						theme:"dark"
-					});
-
-				});
-
-			})(jQuery);
