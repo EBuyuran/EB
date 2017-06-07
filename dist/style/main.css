@@ -37,7 +37,11 @@ body {
   line-height: 1;
   overflow: hidden;
   box-sizing: border-box;
-  cursor: default; }
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
 
 ::-webkit-scrollbar {
   display: none; }
