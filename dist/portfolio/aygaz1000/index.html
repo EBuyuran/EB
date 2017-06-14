@@ -1,0 +1,372 @@
+<!doctype html> 
+<html>
+
+<head>
+
+	<title>300x250 Aygaz1000</title>
+	<meta charset="utf-8"/>
+	<meta name="ad.size" content="width=300,height=250">
+
+	<style>
+
+
+
+		/* Defaults */
+
+		body { background: #333; }
+
+		img, div {
+
+			display: block;
+			position: absolute; 
+			text-align: center;
+		}
+
+		div img {
+
+			position: relative;
+		}
+
+		.hidden		{display: none}
+		.z1			{z-index:1} .z2{z-index:2} .z3{z-index:3} .z4{z-index:4} .z5{z-index:5} .z6{z-index:6} .z7{z-index:7} .z8{z-index:8} .z9{z-index:9}
+
+		#ad {
+
+			position: absolute;
+
+			width: 300px;
+			height: 250px;
+
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+
+			overflow: hidden;
+		}
+
+
+
+
+
+		/* Banner Content */
+
+		div.text1a {
+
+			top: 54px;
+			left: 50%;
+
+			transform: translate(-50%, -100%);
+
+			overflow: hidden;
+
+			animation: text1a .35s ease-in-out forwards .5s;
+		}
+
+		@keyframes text1a {
+
+			0%		{ transform: translate(-50%, -100%); }
+			100%	{ transform: translate(-50%, 0); }
+		}
+
+		div.text1a img {
+
+			transform: translateY(100%);
+
+			animation: text1a-img .35s ease-in-out forwards .5s;
+		}
+
+		@keyframes text1a-img {
+
+			0%		{ transform: translateY(100%); }
+			100%	{ transform: translateY(0); }
+		}
+
+
+
+
+
+		div.text1b {
+
+			top: 94px;
+			left: 50%;
+
+			transform: translateX(-50%);
+
+			overflow: hidden;
+		}
+
+		div.text1b img {
+
+			transform: translateX(-105%);
+
+			animation: text1b .6s ease-in-out forwards .75s;
+		}
+
+		@keyframes text1b {
+
+			0%		{ transform: translateX(-105%); }
+			100%	{ transform: translateX(0); }
+		}
+
+
+
+
+
+		img.text1c {
+
+			top: 140px;
+			left: 50%;
+
+			transform: translateX(-50%);
+
+			opacity: 0;
+
+			animation: fadein .6s ease-in-out forwards 1.15s;
+		}
+
+
+
+
+
+		div.text1d {
+
+			top: 185px;
+			left: 64px;
+
+			overflow: hidden;
+		}
+
+		div.text1d img {
+
+			transform: translateY(105%);
+
+			animation: text1d .45s ease-in-out forwards 1.6s;
+		}
+
+		@keyframes text1d {
+
+			0%		{ transform: translateY(105%); }
+			100%	{ transform: translateY(0); }
+		}
+
+
+
+
+
+		div.scont1 {
+
+			top: 0; bottom: 0; left: 0; right: 0;
+
+			transform: translateX(0);
+
+			animation: scont1 .5s ease-in-out forwards 3.25s;
+		}
+
+		@keyframes scont1 {
+
+			0%		{ transform: translateX(0); }
+			100%	{ transform: translateX(-105%); }
+		}
+
+
+
+
+
+		div.scont2 {
+
+			top: 0;
+
+			width: 300px;
+			height: 250px;
+
+			transform: translateX(105%);
+
+			animation: scont2 .5s ease-in-out forwards 3.45s, scont2b .35s ease-in-out forwards 8s;
+		}
+
+		@keyframes scont2 {
+
+			0%		{ transform: translateX(105%); }
+			100%	{ transform: translateX(0); }
+		}
+
+		@keyframes scont2b {
+
+			0%		{ top: 0; }
+			100%	{ top: -33px; }
+		}
+
+
+
+
+
+		img.car {
+
+			position: absolute;
+
+			left: -540px;
+			bottom: 0;
+
+			animation: car 1.65s ease-in-out forwards 3.25s;
+		}
+
+		@keyframes car {
+
+			0%		{ left: -540px; }
+			100%	{ left: 58px; }
+		}
+
+
+
+
+
+		img.text2 {
+
+			position: absolute;
+
+			top: 70px;
+			left: 50%;
+
+			transform: translateX(-50%);
+
+			animation: text2 .5s ease-in-out forwards 6s;
+		}
+
+		@keyframes text2 {
+
+			0%		{ left: 50% }
+			100%	{ left: -100%; }
+		}
+
+
+
+
+
+		img.aygazlogo {
+
+			position: absolute;
+
+			top: 20px;
+			left: 50%;
+
+			transform: translateX(-50%);
+
+			animation: aygazlogo .5s ease-in-out forwards 6s;
+		}
+
+		@keyframes aygazlogo {
+
+			0%		{ left: 50% }
+			100%	{ left: -100%; }
+		}
+
+
+
+
+
+		img.footer {
+
+			position: absolute;
+
+			bottom: 0;
+
+			transform: translateY(100%);
+		}
+
+
+
+
+
+		img.text3 {
+
+			top: 73px;
+			left: 150%;
+
+			transform: translateX(-50%);
+
+			animation: text3 .5s ease-in-out forwards 6.0s;
+		}
+
+		@keyframes text3 {
+
+			0% 		{ left: 150%; }
+			100% 	{ left: 50%; }
+		}
+
+
+
+
+
+		img.button {
+
+			top: 90px;
+			left: 50%;
+
+			transform: translateX(-50%);
+
+			opacity: 0;
+
+			animation: fadein .5s ease-in-out forwards 6.0s;
+		}
+
+
+
+
+
+
+		@keyframes fadein {
+
+			0% 		{ opacity: 0; }
+			100% 	{ opacity: 1; }
+		}
+
+
+
+	</style>
+
+</head>
+<body>
+
+	<section id="ad">
+
+		<!-- Persistent -->
+
+		<img class="z1" src="background.png">
+
+		<!-- Scece 1 -->
+
+		<div class="z2 scont1">
+
+			<div class="z3 text1a ">
+				<img src="text1a.png">
+			</div>
+
+			<div class="z3 text1b ">
+				<img src="text1b.png">
+			</div>
+
+			<img class="z3 text1c" src="text1c.png">
+
+			<div class="z3 text1d ">
+				<img src="text1d.png">
+			</div>
+
+		</div>
+
+		<!-- Scece 2 -->
+
+		<div class="z2 scont2">
+
+			<img class="text2 z3" src="text2.png">
+			<img class="aygazlogo z3" src="aygazlogo.png">
+			<img class="car z3" src="car.png">
+			<img class="text3 z3" src="text3.png">
+			<img class="button z3" src="button.png">
+			<img class="footer z3" src="footer.png">
+
+		</div>
+
+	</section>
+
+</body>
+</html>

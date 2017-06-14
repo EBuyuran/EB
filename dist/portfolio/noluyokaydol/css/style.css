@@ -1,0 +1,514 @@
+
+
+body {
+
+	margin: 0; background: #444;
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+
+div.wrapToCenter {
+
+	height: 100vh;
+	position: relative;
+}
+
+div.popupWrap {
+
+	width: 740px;
+	height: 500px;
+
+	border-radius: 6px;
+	box-shadow: 0px 0px 20px black;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+
+    transform: translate( -50%, -50% );
+    -ms-transform: translate( -50%, -50% );
+    -webkit-transform: translate( -50%, -50% );
+
+	background: #1c5da0; /* Old browsers */
+	background: -moz-linear-gradient(45deg,  #2ec2ed 0%, #1c5da0 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(45deg,  #2ec2ed 0%,#1c5da0 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(45deg,  #2ec2ed 0%,#1c5da0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c5da0', endColorstr='#2ec2ed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+	color: white;
+	text-shadow: 0px 0px 8px rgba( 0, 72, 110, 0.3 );
+}
+
+div.popupForm {
+
+	position: absolute;
+	top: 260px; left: 40px;
+}
+
+div.popupForm > input:nth-child(odd) {
+
+	margin-right: 77px;
+}
+
+div.termsCheck {
+
+	 position: absolute;
+	 top: 360px; left: 50px;
+}
+
+div.facebookLogInButton {
+
+	width: 292px; height: 36px;
+	background: #3b5998;
+
+	border-radius: 6px;
+
+	color: white;
+	text-align: center;
+	padding-top: 7px;
+
+	position: absolute;
+	top: 400px; left: 412px;
+
+	cursor: pointer;
+
+    -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+         -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+}
+
+div.facebookLogInButton:hover {
+
+	background: #2d4474;
+}
+
+div.choiceText {
+
+	position: absolute;
+	top: 407px; left: 351px;
+}
+
+div.signInText {
+
+	position: absolute;
+	bottom: 15px; left: 40px;
+
+	font-size: 15px;
+}
+
+
+
+
+
+
+ul.iconicList {
+
+	display: block;
+	position: absolute;
+	top: 100px;
+	left: 48px;
+	padding: 0; margin: 0;
+
+	list-style: none;
+	font-size: 14px;
+}
+
+ul.iconicList > li {
+
+	padding: 0; margin: 0;
+	position: relative;
+}
+
+
+
+
+
+h2.popupHeader {
+
+	display: block;
+	position: absolute;
+	top: 40px;
+	left: 40px;
+
+	font: 28px 'Roboto', Arial, Helvetica, sans-serif;
+	margin: 0;
+
+	letter-spacing: -1px;
+	line-height: 30px !important;
+}
+
+
+
+
+
+img.MONSTER {
+	position: absolute;
+	top: -20px; right: 0;
+}
+
+
+
+
+
+p.textForMyIcons {
+
+	width: 500px;
+
+	display: inline-block;
+	padding: 0; margin: 0;
+
+	position: absolute;
+	top: 8px; left: 60px;
+}
+
+p.textForMyCheckbox {
+
+	width: 500px;
+
+	display: inline-block;
+	padding: 0; margin: 0;
+
+	position: absolute;
+	left: 25px;
+}
+
+
+
+
+
+input.popupFormInput {
+
+	width: 290px; height: 30px;
+	border: none; background: none;
+	border-bottom: 1px solid white;
+
+	padding: 0 10px; margin: 0 0 20px 0;
+
+	color: white;
+	font-size: 17px;
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	font-weight: normal !important;
+}
+
+input.popupFormInput:focus {
+
+	outline: none;
+}
+
+input.popupFormCheckbox {
+
+	width: 14px; height: 14px;
+	background-position: -270px -34px;
+
+	margin: 0; padding: 0;
+}
+
+input[type="checkbox"].termsCheck {
+
+	top: 3px; margin: 0;
+}
+
+
+
+
+
+
+
+button.signUpButton {
+
+	width: 292px; height: 36px;
+	background: #0dc833;
+	border: none;
+	border-radius: 6px;
+
+	color: white;
+	text-align: center;
+	padding-top: 2px;
+	font-weight: bold;
+	letter-spacing: 1px;
+
+	position: absolute;
+	top: 400px; left: 41px;
+
+	cursor: pointer;
+
+    -webkit-transition: all 0.5s ease;
+       -moz-transition: all 0.5s ease;
+         -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+}
+
+button.signUpButton:hover {
+
+	background: #0c9f2a;
+}
+
+button.signUpButton:focus {
+
+	outline: none;
+}
+
+
+
+
+
+a.popupLink, a.popupLink:visited, a.popupLink:active, a.popupLink:hover {
+
+	color: #c2ff90;
+}
+
+a.popupLink:hover {
+
+	text-decoration: underline;
+}
+
+
+
+
+
+.mebicon {
+
+	width: 50px; height: 30px;
+	display: inline-block;
+	background: url("../img/mebrite.png") no-repeat;
+}
+
+
+@media print, (-o-min-device-pixel-ratio:5/4), (-webkit-min-device-pixel-ratio:1.25), (min-resolution:2dppx) {
+
+	.mebicon {
+
+		background: url("../img/mebrite_x2.png");
+		background-size: 270px 80px;
+	}
+
+}
+
+
+
+.reminder {
+	background-position: -16px -24px;
+}
+
+.noSpoiler {
+	background-position: -66px -24px;
+}
+
+.stream {
+	background-position: -124px -24px;
+}
+
+.mailSent {
+	background-position: -195px -24px;
+}
+
+
+
+div.popupForm > label.error {
+
+	display: block;
+	position: absolute;
+
+	padding: 5px 12px;
+	border-radius: 5px;
+
+	background: #d3000c;
+
+	color: white;
+
+	font-size: 11px;
+	font-style: italic;
+	font-weight: normal;
+
+	z-index: 4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 767px) {
+
+
+	div.popupWrap {
+
+		width: 300px;
+		height: 530px;
+	}
+
+	div.popupForm > input:nth-child(odd) {
+
+		margin-right: 0;
+	}
+
+	div.popupForm {
+
+		position: absolute;
+		top: 215px; left: 20px;
+	}
+
+	div.termsCheck {
+
+		 top: 360px; left: 20px;
+	}
+
+	div.choiceText {
+
+		top: 433px; left: 125px;
+		font-size: 11px;
+	}
+
+	div.facebookLogInButton {
+
+		width: 260px;
+		height: 32px;
+
+		padding-top: 5px;
+
+		top: 453px; left: 20px;
+	}
+
+	div.signInText {
+
+		bottom: 14px; left: 84px;
+
+		font-size: 13px;
+	}
+
+
+
+	img.MONSTER {
+		
+		width: 30%;
+		top: 40px;
+	}
+
+
+
+
+
+	h2.popupHeader {
+
+		width: 240px;
+
+		top: 20px;
+		left: 20px;
+
+		font: 21px 'Roboto', Arial, Helvetica, sans-serif;;
+	}
+
+
+
+
+
+	ul.iconicList {
+
+		top: 95px;
+		left: 25px;
+	}
+
+	ul.iconicList > li {
+
+		margin: 0 0 4px 0;
+	}
+
+
+
+
+
+	p.textForMyIcons {
+
+		width: 200px;
+
+		top: 4px; left: 45px;
+
+		font-size: 12px;
+		line-height: 11px;
+	}
+
+	p.textForMyCheckbox {
+
+		width: 235px;
+
+		left: 25px;
+		font-size: 11px;
+		line-height: 12px;
+	}
+
+
+
+
+	input.popupFormInput {
+
+		width: 260px; height: 30px;
+		border-bottom: 1px solid white;
+
+		padding: 0 10px; margin: 0 0 5px 0;
+
+		font-size: 14px;
+	}
+
+	input[type="checkbox"].termsCheck {
+
+		top: 1px; margin: 0;
+	}
+
+
+
+
+
+	button.signUpButton {
+
+		width: 260px;
+		height: 32px;
+
+		padding-top: 0;
+
+		top: 395px; left: 20px;
+	}
+
+
+
+
+
+	.mebicon {
+
+		width: 35px; height: 20px;
+		background-size: 250px 74px;
+	}
+
+	.reminder {
+		background-position: -20px -27px;
+	}
+
+	.noSpoiler {
+		background-position: -66px -27px;
+	}
+
+	.stream {
+		background-position: -118px -27px;
+	}
+
+	.mailSent {
+		background-position: -183px -27px;
+	}
+
+
+}

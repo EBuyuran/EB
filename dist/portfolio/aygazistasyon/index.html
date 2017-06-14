@@ -1,0 +1,155 @@
+<!doctype html> 
+<html>
+
+<head>
+
+	<title>Aygaz İstasyon</title>
+	<meta charset="utf-8"/>
+	<meta name="ad.size" content="width=300,height=250">
+
+	<script type="text/javascript">
+		var clickTag = "http://www.aygaz.com.tr/";
+	</script>
+
+	<style>
+
+
+
+		/* Defaults */
+
+		body { background: #333; }
+
+		img, div {
+
+			display: block;
+			position: absolute; 
+			text-align: center;
+		}
+
+		div img {
+
+			position: relative;
+		}
+
+		.hidden		{display: none}
+		.z1			{z-index:1} .z2{z-index:2} .z3{z-index:3} .z4{z-index:4} .z5{z-index:5} .z6{z-index:6} .z7{z-index:7} .z8{z-index:8} .z9{z-index:9}
+
+		#ad {
+
+			position: absolute;
+
+			width: 300px;
+			height: 250px;
+
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+
+			overflow: hidden;
+		}
+
+
+
+
+
+		/* Banner Content */
+
+		img.background1 {
+
+		}
+
+		img.background2 {
+
+			opacity: 0;
+			animation: fadein .45s ease-in-out forwards 2s;
+			-webkit-animation: fadein .45s ease-in-out forwards 2s;
+			backface-visibility: hidden;
+			-webkit-backface-visibility: hidden; 
+		}
+
+		img.background3 {
+
+			opacity: 0;
+			animation: fadein .45s ease-in-out forwards 4s;
+			-webkit-animation: fadein .45s ease-in-out forwards 4s;
+			backface-visibility: hidden;
+			-webkit-backface-visibility: hidden; 
+		}
+
+		img.background4 {
+
+			opacity: 0;
+			animation: fadein .45s ease-in-out forwards 6s;
+			-webkit-animation: fadein .45s ease-in-out forwards 6s;
+			backface-visibility: hidden;
+			-webkit-backface-visibility: hidden; 
+		}
+
+		img.background5 {
+
+			opacity: 0;
+			animation: fadein .45s ease-in-out forwards 8s;
+			-webkit-animation: fadein .45s ease-in-out forwards 8s;
+			backface-visibility: hidden;
+			-webkit-backface-visibility: hidden; 
+		}
+
+		img.background6 {
+
+			opacity: 0;
+			animation: fadein .45s ease-in-out forwards 10s;
+			-webkit-animation: fadein .45s ease-in-out forwards 10s;
+			backface-visibility: hidden;
+			-webkit-backface-visibility: hidden; 
+		}
+
+
+
+
+		@keyframes fadein {
+
+			0%		{ opacity: 0 }
+			100%	{ opacity: 1 }
+		}
+
+		@keyframes fadeout {
+
+			0%		{ opacity: 1 }
+			100%	{ opacity: 0 }
+		}
+
+		@-webkit-keyframes fadein {
+
+			0%		{ opacity: 0 }
+			100%	{ opacity: 1 }
+		}
+
+		@-webkit-keyframes fadeout {
+
+			0%		{ opacity: 1 }
+			100%	{ opacity: 0 }
+		}
+
+
+	</style>
+
+</head>
+<body>
+
+	<a href="javascript:window.open(window.clickTag)">
+
+		<section id="ad">
+
+			<img class="z1 background1" src="1.jpg">
+			<img class="z2 background2" src="2.jpg">
+			<img class="z3 background3" src="3.jpg">
+			<img class="z4 background4" src="4.jpg">
+			<img class="z5 background5" src="5.jpg">
+			<img class="z6 background6" src="6.jpg">
+
+		</section>
+
+	</a>
+
+</body>
+</html>

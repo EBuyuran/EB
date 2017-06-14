@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <title>Boilerplate</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1 user-scalable=no">
+    <meta name="description" content=""><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="fx">
+      <div class="row logo">
+        <div class="block s12"><img src="img/logo.png"></div>
+      </div>
+      <div class="row" id="formScreen">
+        <div class="block s12">
+          <div class="row question">
+            <div class="block s12"><img src="img/question.png">
+              <mytest id="span">Hemen aşağıdaki formu doldurup çekilişimize katılın,<br><span class="bolder">bilet kazanma şansı yakalayın!</span></mytest>
+            </div>
+          </div>
+          <form id="lotty" name="lotty">
+            <div class="row">
+              <div class="block s6">
+                <label class="text">Ad:</label>
+                <input id="field1" type="text" data-format="info" value="Efe">
+              </div>
+              <div class="block s6">
+                <label class="text">Soyad:</label>
+                <input id="field2" type="text" data-format="info" value="Buyuran">
+              </div>
+            </div>
+            <div class="row">
+              <div class="block s6">
+                <label class="text">Doğum Tarihi:</label>
+                <input id="field3" type="text" data-format="dob" value="00-00-0000">
+              </div>
+              <div class="block s6">
+                <label class="text">Cep Telefonu:</label>
+                <input id="field4" type="text" data-format="gsm" value="000-000-0000">
+              </div>
+            </div>
+            <div class="row">
+              <div class="block s6">
+                <label class="text">Eposta</label>
+                <input id="field5" type="text" data-format="email" value="efebuyuran@gmail.com">
+              </div>
+              <div class="block s6">
+                <label class="text">Adres:</label>
+                <input id="field6" type="text" data-format="info" value="Erguvan Sk.">
+              </div>
+            </div>
+            <div class="row">
+              <div class="block s12 checkbox">
+                <input id="field7" type="checkbox" data-format="check" checked>
+                <label for="field7"><a href="terms.html" target="_blank">Katılım koşullarını</a> kabul ediyorum.</label>
+              </div>
+              <div class="block s12"><span class="spin">Şanslı çekiliş numaranı görmek için çevir!</span>
+                <div class="spin" id="spinner"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row" id="successScreen">
+        <div class="block s12">
+          <div class="row question">
+            <div class="block s12"><img src="img/thanks.png">
+              <div class="row">
+                <div class="block s11 s1-left"><span>Kaydınız alınmıştır. Katılımınız için teşekkür ederiz.<br><span style="font-weight: 700">Kazanıp kazanmadığınızı öğrenmek için bizi takipte kalın!</span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row numbers">
+        <div class="block s12">
+          <ul>
+            <li>
+              <div class="slot" id="slot1"></div>
+            </li>
+            <li>
+              <div class="slot" id="slot2"></div>
+            </li>
+            <li>
+              <div class="slot" id="slot3"></div>
+            </li>
+            <li>
+              <div class="slot" id="slot4"></div>
+            </li>
+            <li>
+              <div class="slot" id="slot5"></div>
+            </li>
+            <li>
+              <div class="slot" id="slot6"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <footer>
+        <div class="row">
+          <div class="block s6"><a href="http://hyundai.com.tr" target="_blank">hyundai.com.tr</a></div>
+          <div class="block s6">
+            <ul class="social">
+              <li><a href="javascript:void(0)"><img src="img/facebook.png"></a></li>
+              <li><a href="javascript:void(0)"><img src="img/twitter.png"></a></li>
+              <li><a href="javascript:void(0)"><img src="img/instagram.png"></a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <link rel="stylesheet" href="style/main.css">
+    <script src="script/jquery.js"></script>
+    <script src="script/main.js"></script>
+    <script>
+      $(document).ready(function(){
+      
+      	$("#field3").mask('00/00/0000')
+      	$("#field4").mask('000-000-0000')
+      
+      });
+    </script>
+  </body>
+</html>

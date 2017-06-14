@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/main.min.css?v=3.3" />
+		<link rel="stylesheet" href="css/style.css?v=1">
+		<link href="https://fonts.googleapis.com/css?family=Oswald&amp;subset=latin-ext" rel="stylesheet">
+
+	</head>
+	<body>
+
+		<div class="wrapToCenter">
+			<div class="popupWrap">
+
+				<img class="MONSTER" src="img/canavar.png">
+				<h2 class="popupHeader">ASIL SEN BİR DE İÇERİYİ GÖR!</h2>
+
+				<ul class="iconicList">
+
+					<li>
+						<i class="mebicon reminder"></i>
+						<p class="textForMyIcons">Kolayca hatırlatma kur</p>
+					</li>
+
+					<li>
+						<i class="mebicon noSpoiler"></i>
+						<p class="textForMyIcons">Rahat rahat spoiler ver</p>
+					</li>
+
+					<li>
+						<i class="mebicon stream"></i>
+						<p class="textForMyIcons">Kendi özel yayın akışını yarat</p>
+					</li>
+
+					<li>
+						<i class="mebicon mailSent"></i>
+						<p class="textForMyIcons">TV haberleri cebine gelsin</p>
+					</li>
+
+				</ul><!-- iconicList -->
+
+
+
+				<div class="popupForm">
+
+					<input class="popupFormInput" type="text" tabindex="1" onfocus="if(this.value == 'Ad Soyad:') { this.value = ''; }" onblur="if (this.value == '') { this.value = 'Ad Soyad:'; }" value="Ad Soyad:" />
+					<input class="popupFormInput" type="text" tabindex="2" onfocus="if(this.value == 'Eposta Adresi:') { this.value = ''; }" onblur="if (this.value == '') { this.value = 'Eposta Adresi:'; }" value="Eposta Adresi:" />
+					<input class="popupFormInput" type="text" tabindex="3" onfocus="if(this.value == 'Kullanıcı Adı:') { this.value = ''; }" onblur="if (this.value == '') { this.value = 'Kullanıcı Adı:'; }" value="Kullanıcı Adı:" />
+					
+					<div id="passwordBox" style="display: inline-block;">
+						<input id="changingPasswordField" class="popupFormInput" type="text" value="Şifre:" tabindex="4" onfocus="changePasswordField();" />
+					</div>
+
+				</div><!-- popupForm -->
+
+
+
+				<div class="termsCheck">
+					<input type="checkbox" class="termsCheck" /><p class="textForMyCheckbox">Kaydını tamamlayarak <a href="#" class="popupLink">kullanım koşullarını</a> kabul etmiş olacaksın.</p>
+				</div>
+
+				<button type="submit" class="signUpButton">
+					E-posta ile Kaydol
+				</button>
+
+				<div class="choiceText">
+					VEYA
+				</div>
+
+				<div class="signUpButton facebookLogInButton">
+					Facebook ile Kaydol
+				</div>
+
+				<div class="signInText">
+					Üye misin? <a href="#" class="popupLink">Giriş Yap!</a>
+				</div>
+
+
+
+			</div><!-- popupWrap -->
+		</div><!-- wrapToCenter -->
+
+
+		<script>
+			function changePasswordField(){
+				document.getElementById("passwordBox").innerHTML = '<input type="password" class="popupFormInput" id="password" name="password" tabindex="4" onblur="changePasswordFieldBack()" />';
+				document.getElementById("password").focus();
+			}
+
+			function changePasswordFieldBack(){
+				if (document.getElementById("password").value == "" ) {
+					document.getElementById("passwordBox").innerHTML = '<input id="changingPasswordField" class="popupFormInput" type="text" value="Şifre:" tabindex="4" onfocus="changePasswordField();" />';
+				}
+			}
+		</script>
+
+
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html><meta charset=utf-8><meta name=description content=""><meta name=viewport content="width=device-width,initial-scale=1"><title>Huawei</title><link rel=stylesheet href=styles/main.css><header><img class=show-desktop src=images/header.jpg> <img class=show-mobile src=images/header-mobile.jpg></header><main><article class=clearfix><div class="block wide bg"><div class=info><p><span>*</span> Huawei Bayi Destek Hattı ve Huawei Destek Hattı, resmi tatiller hariç hafta içi 09:00 - 18:00 saatleri arası hizmet vermektedir.<p><span>**</span> Ortalama tamir süresi, arıza türüne göre değişiklik gösterebilmektedir.<p><span>***</span> Değerli bayimiz ve kullanıcımız, arızalı cihazı aşağıdaki kodu kullanarak ücretsiz olarak en yakın<br>Yurtiçi Kargo şubesine elden teslim edebilirsiniz.<p class="is-large is-bold">264323529<p>Yurtiçi Kargo etiketinin çıktısını almak için <a target=_blank href=HuaweiYurticiEtiket.pdf>tıklayınız »</a><p>Kapıdan kapıya servis formu için <a target=_blank href=http://consumer.huawei.com/tr/support/express-repair/index.htm>tıklayınız »</a></div></div><div class="block narrow bg bg1"><img src=images/block-img1.png><div class=content><p>Huawei Destek Hattı:<br><span class=is-large>444 79 88</span><p>Huawei Bayi Destek Hattı:<br><span class=is-large>444 96 88</span></div></div><div class="block narrow bg bg2 n-center"><img src=images/block-img2.png><div class=content><p class=adress><strong>İstanbul</strong>: General Ali Rıza Gürcan Cad. Alparslan İş Mrk. No: 29 / Z1 Merter (Metro Durağı Karşısı)<p class=adress><strong>Ankara</strong>: Gazi Mustafa Kemal Bulvarı No: 23/B Kızılay</div></div><div class="block narrow bg bg3"><img src=images/block-img3.png><div class=content><p style="margin-bottom: 12px"><a href=mailto:mobile.tr@huawei.com>mobile.tr@huawei.com</a></p><a href="https://play.google.com/store/apps/details?id=com.huawei.phoneservice&hl=tr" target=_blank><img src=images/hicare.png></a></div></div></article><aside><div class=mapButtons><div id=istBtn onclick=loadMapIst() class="mapBtn istButton active">İstanbul</div><div id=ankBtn onclick=loadMapAnk() class="mapBtn ankButton">Ankara</div></div><div id=map></div></aside><footer><p>Telif Hakkı © Huawei Telekomünikasyon Ltd. Şti. 1998-2013. Tüm hakları saklıdır.</footer></main><script>var map, myLatlng, marker;
+
+		function initMap(lat,lon) {
+
+			myLatlng = new google.maps.LatLng(lat,lon);
+			map = new google.maps.Map(document.getElementById('map'), {
+
+				center: myLatlng,
+				zoom: 14,
+				styles: [
+					{
+						featureType: 'all',
+						stylers: [
+							{ saturation: -80 }
+						]
+				},{
+					featureType: 'road.arterial',
+					elementType: 'geometry',
+					stylers: [
+						{ hue: '#00ffee' },
+						{ saturation: 50 }
+					]
+				},{
+					featureType: 'poi.business',
+					elementType: 'labels',
+					stylers: [
+						{ visibility: 'off' }
+					]
+				}
+				]
+			});
+
+			marker = new google.maps.Marker({
+				position: myLatlng
+			});
+
+			marker.setMap(map);
+
+		}
+
+		function loadMapIst() {
+
+			initMap(41.067778,29.0049696);
+			document.getElementById("istBtn").classList.add("active");
+			document.getElementById("ankBtn").classList.remove("active");
+		}
+
+		function loadMapAnk() {
+
+			initMap(39.922792,32.849811);
+			document.getElementById("istBtn").classList.remove("active");
+			document.getElementById("ankBtn").classList.add("active");
+		}</script><script src="https://maps.googleapis.com/maps/api/js?callback=loadMapIst" async defer></script>
