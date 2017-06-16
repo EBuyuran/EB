@@ -86,11 +86,12 @@ p {
   margin: 1.5em 0; }
 
 a {
-  color: #00d2e5;
-  text-decoration: none; }
+  color: black;
+  text-decoration: none;
+  font-family: "Montserrat-Medium"; }
   a:hover {
-    color: #ff00a3;
-    text-decoration: underline; }
+    color: black;
+    text-decoration: none; }
 
 a.btn, button {
   display: block;
@@ -99,7 +100,7 @@ a.btn, button {
   padding: 0.75em 1.5em;
   border-radius: 0.25em;
   border: 1px solid transparent;
-  background: #00d2e5;
+  background: black;
   font-size: 0.85em;
   line-height: 1em;
   color: white;
@@ -110,14 +111,14 @@ a.btn, button {
           user-select: none;
   cursor: pointer; }
   a.btn:hover, button:hover {
-    background: #ff00a3; }
+    background: black; }
   a.btn.shadowlink, button.shadowlink {
     background: none;
-    color: #00d2e5;
-    border: 1px solid #00d2e5; }
+    color: black;
+    border: 1px solid black; }
     a.btn.shadowlink:hover, button.shadowlink:hover {
       color: white;
-      background: #00d2e5; }
+      background: black; }
 
 em {
   font-style: italic; }
@@ -151,7 +152,7 @@ strong {
 .highlighted {
   border-radius: 0.25em;
   padding: 0.1em 0.4em;
-  background: #00d2e5;
+  background: black;
   color: white; }
 
 ol, ul {
@@ -331,7 +332,7 @@ table {
         height: 1.25em;
         padding: 4px 0;
         box-sizing: content-box;
-        background: #00d2e5; }
+        background: black; }
         #hamburger ul li .highlight:after {
           content: "";
           position: absolute;
@@ -339,7 +340,7 @@ table {
           top: 0;
           width: 0;
           height: 0;
-          border-top: calc(1.25em + 8px) solid #00d2e5;
+          border-top: calc(1.25em + 8px) solid black;
           border-right: calc(1.25em + 8px) solid transparent; }
         #hamburger ul li .highlight .dots {
           width: 6px;
@@ -650,6 +651,8 @@ main {
       font-family: "Montserrat-Medium"; }
     #cv .block p {
       line-height: 1.75em; }
+    #cv .block a {
+      font-size: 16px; }
     #cv .block .list {
       float: left;
       width: 100%; }
@@ -778,5 +781,19 @@ main {
       #portfolio .container .item .element img {
         width: 100%;
         height: auto; }
+
+#contact .content {
+  position: relative;
+  max-width: 640px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
+  #contact .content ul.social li a {
+    font-size: 14px; }
+    #contact .content ul.social li a img {
+      max-width: 20px;
+      position: relative;
+      top: 5px;
+      margin-right: 2px; }
 
 /*# sourceMappingURL=main.css.map */
