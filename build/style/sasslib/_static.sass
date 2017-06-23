@@ -12,7 +12,7 @@ $headerHeightUl: 64px
 	top: 0
 	left: 0
 
-	width: 100vw
+	width: 100%
 	height: 0
 
 	overflow: hidden
@@ -24,9 +24,9 @@ $headerHeightUl: 64px
 		top: 0
 		left: 0
 
-		width: 100vw
+		width: 100%
 
-		padding: 8vh
+		padding: 8%
 
 		background: $background-colour
 
@@ -37,8 +37,8 @@ $headerHeightUl: 64px
 		#closeHamburger
 
 			position: absolute
-			top: 8vh
-			right: 8vh
+			top: 8%
+			right: 8%
 			z-index: 300
 
 			width: 20px
@@ -72,7 +72,7 @@ $headerHeightUl: 64px
 		li
 
 			position: relative
-			width: 70vw
+			width: 70%
 
 			color: white
 			font-size: .9em
@@ -102,10 +102,10 @@ $headerHeightUl: 64px
 
 				position: absolute
 				top: -4px
-				left: -20vw
+				left: -20%
 				z-index: 100
 
-				width: 65vw
+				width: 65%
 				height: 1.25em
 
 				padding: 4px 0
@@ -134,7 +134,7 @@ $headerHeightUl: 64px
 
 					position: absolute
 					top: 9px
-					left: 14vw
+					left: 14%
 
 					div
 
@@ -269,8 +269,8 @@ header
 
 main
 
-	width: 100vw
-	height: 100vh
+	width: 100%
+	height: 100%
 
 	position: fixed
 	top: 0
@@ -291,45 +291,45 @@ main
 
 		&.horizontal
 
-			margin: 8vw
+			margin: 8%
 
-			width: 84vw
-			height: calc((100vh - 16vw) - (#{$headerHeightMb} + 20px))
+			width: 84%
+			height: calc((100% - 16%) - (#{$headerHeightMb} + 20px))
 
-			margin-top: calc(8vw + (#{$headerHeightMb} + 20px))
+			margin-top: calc(8% + (#{$headerHeightMb} + 20px))
 
 			+sm
 
-				height: calc((100vh - 16vw) - (#{$headerHeightSm} + 20px))
+				height: calc((100% - 16%) - (#{$headerHeightSm} + 20px))
 
-				margin-top: calc(8vw + (#{$headerHeightSm} + 20px))
+				margin-top: calc(8% + (#{$headerHeightSm} + 20px))
 
 			+ul
 
-				height: calc((100vh - 16vw) - (#{$headerHeightUl} + 20px))
+				height: calc((100% - 16%) - (#{$headerHeightUl} + 20px))
 
-				margin-top: calc(8vw + (#{$headerHeightUl} + 20px))
+				margin-top: calc(8% + (#{$headerHeightUl} + 20px))
 
 		&.vertical
 
-			margin: 8vh
+			margin: 8%
 
-			width: calc(100vw - 16vh)
-			height: calc(84vh - (#{$headerHeightMb} + 20px))
+			width: calc(100% - 16%)
+			height: calc(84% - (#{$headerHeightMb} + 20px))
 
-			margin-top: calc(8vh + (#{$headerHeightMb} + 20px))
+			margin-top: calc(8% + (#{$headerHeightMb} + 20px))
 
 			+sm
 
-				height: calc(84vw - (#{$headerHeightSm} + 20px))
+				height: calc(84% - (#{$headerHeightSm} + 20px))
 
-				margin-top: calc(8vw + (#{$headerHeightSm} + 20px))
+				margin-top: calc(8% + (#{$headerHeightSm} + 20px))
 
 			+ul
 
-				height: calc(84vw - (#{$headerHeightUl} + 20px))
+				height: calc(84% - (#{$headerHeightUl} + 20px))
 
-				margin-top: calc(8vw + (#{$headerHeightUl} + 20px))
+				margin-top: calc(8% + (#{$headerHeightUl} + 20px))
 
 
 

@@ -79,13 +79,13 @@ var EB = {
 
 			if (screenWidth >= screenHeight) {
 
-				background.style.width = "100vw";
-				background.style.height = "100vw";
+				background.style.width = "100%";
+				background.style.height = "100%";
 
 			} else {
 
-				background.style.width = "100vh";
-				background.style.height = "100vh";
+				background.style.width = "100%";
+				background.style.height = "100%";
 
 			};
 
@@ -361,17 +361,17 @@ var EB = {
 
 				if (EB.ScreenSize.Width() < screenSm) {
 
-					document.getElementsByTagName("header")[0].style.top = "8vw";
-					document.getElementsByTagName("header")[0].style.width = "100vw";
-					document.getElementsByTagName("header")[0].style.paddingLeft = "8vw";
-					document.getElementsByTagName("header")[0].style.paddingRight = "8vw";
+					document.getElementsByTagName("header")[0].style.top = "8%";
+					document.getElementsByTagName("header")[0].style.width = "100%";
+					document.getElementsByTagName("header")[0].style.paddingLeft = "8%";
+					document.getElementsByTagName("header")[0].style.paddingRight = "8%";
 
 				} else {
 
-					document.getElementsByTagName("header")[0].style.top = "8vw";
-					document.getElementsByTagName("header")[0].style.width = "100vw";
-					document.getElementsByTagName("header")[0].style.paddingLeft = "8vw";
-					document.getElementsByTagName("header")[0].style.paddingRight = "8vw";
+					document.getElementsByTagName("header")[0].style.top = "8%";
+					document.getElementsByTagName("header")[0].style.width = "100%";
+					document.getElementsByTagName("header")[0].style.paddingLeft = "8%";
+					document.getElementsByTagName("header")[0].style.paddingRight = "8%";
 
 				}
 
@@ -379,17 +379,17 @@ var EB = {
 
 				if (EB.ScreenSize.Width() < screenSm) {
 
-					document.getElementsByTagName("header")[0].style.top = "8vh";
-					document.getElementsByTagName("header")[0].style.width = "100vw";
-					document.getElementsByTagName("header")[0].style.paddingLeft = "8vh";
-					document.getElementsByTagName("header")[0].style.paddingRight = "8vh";
+					document.getElementsByTagName("header")[0].style.top = "8%";
+					document.getElementsByTagName("header")[0].style.width = "100%";
+					document.getElementsByTagName("header")[0].style.paddingLeft = "8%";
+					document.getElementsByTagName("header")[0].style.paddingRight = "8%";
 
 				} else {
 
-					document.getElementsByTagName("header")[0].style.top = "8vh";
-					document.getElementsByTagName("header")[0].style.width = "100vw";
-					document.getElementsByTagName("header")[0].style.paddingLeft = "8vh";
-					document.getElementsByTagName("header")[0].style.paddingRight = "8vh";
+					document.getElementsByTagName("header")[0].style.top = "8%";
+					document.getElementsByTagName("header")[0].style.width = "100%";
+					document.getElementsByTagName("header")[0].style.paddingLeft = "8%";
+					document.getElementsByTagName("header")[0].style.paddingRight = "8%";
 
 				}
 
