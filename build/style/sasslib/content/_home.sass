@@ -87,31 +87,27 @@
 				position: static
 				transform: none
 
-	.bgImg
+	&.active + .bgImg
 
-		position: absolute
-		z-index: 1000
-		bottom: -8vh
-		right: -8vh
+		opacity: .5
 
-		width: 100vw
-		height: 100vh
 
-		background-image: url("../img/bgProfile.png")
-		background-repeat: no-repeat
-		background-size: 100% auto
-		background-position: bottom center
 
-		pointer-events: none
+.bgImg
 
-		opacity: 1
+	position: absolute
+	z-index: 1000
+	bottom: 0
+	right: 0
 
-		+sm
+	width: 100vw
+	height: 100vh
 
-			bottom: -8vw
-			right: -8vw
+	background-image: url("../img/bgProfile.png")
+	background-repeat: no-repeat
+	background-size: contain
+	background-position: bottom right
 
-			background-size: auto 100%
-			background-position: top right
+	pointer-events: none
 
-			opacity: .65
+	opacity: 0

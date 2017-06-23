@@ -332,7 +332,7 @@ table {
         height: 1.25em;
         padding: 4px 0;
         box-sizing: content-box;
-        background: black; }
+        background: #00cdff; }
         #hamburger ul li .highlight:after {
           content: "";
           position: absolute;
@@ -340,7 +340,7 @@ table {
           top: 0;
           width: 0;
           height: 0;
-          border-top: calc(1.25em + 8px) solid black;
+          border-top: calc(1.25em + 8px) solid #00cdff;
           border-right: calc(1.25em + 8px) solid transparent; }
         #hamburger ul li .highlight .dots {
           width: 6px;
@@ -443,6 +443,8 @@ main {
   main #home, main #brands, main #cv, main #portfolio, main #contact {
     opacity: 0;
     pointer-events: none;
+    overflow-x: hidden;
+    overflow-y: auto;
     position: absolute;
     transition: .35s opacity ease-in-out; }
     main #home.horizontal, main #brands.horizontal, main #cv.horizontal, main #portfolio.horizontal, main #contact.horizontal {
@@ -536,26 +538,22 @@ main {
         position: static;
         -webkit-transform: none;
                 transform: none; } }
-  #home .bgImg {
-    position: absolute;
-    z-index: 1000;
-    bottom: -8vh;
-    right: -8vh;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("../img/bgProfile.png");
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: bottom center;
-    pointer-events: none;
-    opacity: 1; }
-    @media (min-width: 768px) {
-      #home .bgImg {
-        bottom: -8vw;
-        right: -8vw;
-        background-size: auto 100%;
-        background-position: top right;
-        opacity: .65; } }
+  #home.active + .bgImg {
+    opacity: .5; }
+
+.bgImg {
+  position: absolute;
+  z-index: 1000;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/bgProfile.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom right;
+  pointer-events: none;
+  opacity: 0; }
 
 #brands {
   height: 100%;
