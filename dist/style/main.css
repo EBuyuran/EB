@@ -284,15 +284,15 @@ table {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 8%;
+    padding: 8vh;
     background: #202020; }
     @media (min-width: 768px) {
       #hamburger .mobileNav {
         display: none; } }
     #hamburger .mobileNav #closeHamburger {
       position: absolute;
-      top: 8%;
-      right: 8%;
+      top: 8vh;
+      right: 8vh;
       z-index: 300;
       width: 20px;
       height: 20px;
@@ -315,9 +315,10 @@ table {
     #hamburger ul li {
       position: relative;
       width: 70%;
+      margin: 12px 0;
       color: white;
       font-size: .9em;
-      line-height: 1.35em;
+      line-height: 1.25em;
       cursor: pointer; }
       #hamburger ul li:first-child {
         margin-top: 0; }
@@ -331,9 +332,9 @@ table {
         display: none;
         position: absolute;
         top: -4px;
-        left: -20%;
+        left: -8vh;
         z-index: 100;
-        width: 65%;
+        width: 100%;
         height: 1.25em;
         padding: 4px 0;
         box-sizing: content-box;
@@ -351,7 +352,7 @@ table {
           width: 6px;
           height: 11px;
           position: absolute;
-          top: 9px;
+          top: 8px;
           left: 14%; }
           #hamburger ul li .highlight .dots div {
             position: absolute;
@@ -453,31 +454,37 @@ main {
     position: absolute;
     transition: .35s opacity ease-in-out; }
     main #home.horizontal, main #brands.horizontal, main #cv.horizontal, main #portfolio.horizontal, main #contact.horizontal {
-      margin: 8%;
-      width: 84%;
-      height: calc((100% - 16%) - (30px + 20px));
-      margin-top: calc(8% + (30px + 20px)); }
+      margin: 8vw;
+      width: calc(100vw - (8vw * 2));
+      height: calc((100vh - (8vw * 2)) - (30px + 20px));
+      margin-top: calc(8vw + (30px + 20px));
+      margin-bottom: 8vw;
+      margin-left: 8vw;
+      margin-right: 8vw; }
       @media (min-width: 768px) {
         main #home.horizontal, main #brands.horizontal, main #cv.horizontal, main #portfolio.horizontal, main #contact.horizontal {
-          height: calc((100% - 16%) - (46px + 20px));
-          margin-top: calc(8% + (46px + 20px)); } }
+          height: calc((100vh - (8vw * 2)) - (46px + 20px));
+          margin-top: calc(8vw + (46px + 20px)); } }
       @media (min-width: 1921px) {
         main #home.horizontal, main #brands.horizontal, main #cv.horizontal, main #portfolio.horizontal, main #contact.horizontal {
-          height: calc((100% - 16%) - (64px + 20px));
-          margin-top: calc(8% + (64px + 20px)); } }
+          height: calc((100vh - (8vw * 2)) - (64px + 20px));
+          margin-top: calc(8vw + (64px + 20px)); } }
     main #home.vertical, main #brands.vertical, main #cv.vertical, main #portfolio.vertical, main #contact.vertical {
-      margin: 8%;
-      width: calc(100% - 16%);
-      height: calc(84% - (30px + 20px));
-      margin-top: calc(8% + (30px + 20px)); }
+      margin: 8vh;
+      width: calc(100vw - (8vh * 2));
+      height: calc((100vh - (8vh * 2)) - (30px + 20px));
+      margin-top: calc(8vh + (30px + 20px));
+      margin-bottom: 8vh;
+      margin-left: 8vh;
+      margin-right: 8vh; }
       @media (min-width: 768px) {
         main #home.vertical, main #brands.vertical, main #cv.vertical, main #portfolio.vertical, main #contact.vertical {
-          height: calc(84% - (46px + 20px));
-          margin-top: calc(8% + (46px + 20px)); } }
+          height: calc((100vh - (8vh * 2)) - (46px + 20px));
+          margin-top: calc(8vh + (46px + 20px)); } }
       @media (min-width: 1921px) {
         main #home.vertical, main #brands.vertical, main #cv.vertical, main #portfolio.vertical, main #contact.vertical {
-          height: calc(84% - (64px + 20px));
-          margin-top: calc(8% + (64px + 20px)); } }
+          height: calc((100vh - (8vh * 2)) - (64px + 20px));
+          margin-top: calc(8vh + (64px + 20px)); } }
   main .active {
     opacity: 1 !important;
     pointer-events: auto !important; }

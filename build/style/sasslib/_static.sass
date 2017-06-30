@@ -26,7 +26,7 @@ $headerHeightUl: 64px
 
 		width: 100%
 
-		padding: 8%
+		padding: 8vh
 
 		background: $background-colour
 
@@ -37,8 +37,8 @@ $headerHeightUl: 64px
 		#closeHamburger
 
 			position: absolute
-			top: 8%
-			right: 8%
+			top: 8vh
+			right: 8vh
 			z-index: 300
 
 			width: 20px
@@ -74,9 +74,11 @@ $headerHeightUl: 64px
 			position: relative
 			width: 70%
 
+			margin: 12px 0
+
 			color: white
 			font-size: .9em
-			line-height: 1.35em
+			line-height: 1.25em
 
 			cursor: pointer
 
@@ -102,10 +104,10 @@ $headerHeightUl: 64px
 
 				position: absolute
 				top: -4px
-				left: -20%
+				left: -8vh
 				z-index: 100
 
-				width: 65%
+				width: 100%
 				height: 1.25em
 
 				padding: 4px 0
@@ -133,7 +135,7 @@ $headerHeightUl: 64px
 					height: 11px
 
 					position: absolute
-					top: 9px
+					top: 8px
 					left: 14%
 
 					div
@@ -291,45 +293,59 @@ main
 
 		&.horizontal
 
-			margin: 8%
+			$defMarginVW: 8vw
 
-			width: 84%
-			height: calc((100% - 16%) - (#{$headerHeightMb} + 20px))
+			margin: $defMarginVW
 
-			margin-top: calc(8% + (#{$headerHeightMb} + 20px))
+			width: calc(100vw - (#{$defMarginVW} * 2))
+
+			// (100% Height - Default page margin for both sides) - Header height with extra spacing
+			height: calc((100vh - (#{$defMarginVW} * 2)) - (#{$headerHeightMb} + #{$defaultGap}))
+
+			// margin-top takes extra space because of header height
+			margin-top: calc(#{$defMarginVW} + (#{$headerHeightMb} + #{$defaultGap}))
+			margin-bottom: $defMarginVW
+			margin-left: $defMarginVW
+			margin-right: $defMarginVW
 
 			+sm
 
-				height: calc((100% - 16%) - (#{$headerHeightSm} + 20px))
-
-				margin-top: calc(8% + (#{$headerHeightSm} + 20px))
+				height: calc((100vh - (#{$defMarginVW} * 2)) - (#{$headerHeightSm} + #{$defaultGap}))
+				margin-top: calc(#{$defMarginVW} + (#{$headerHeightSm} + #{$defaultGap}))
 
 			+ul
 
-				height: calc((100% - 16%) - (#{$headerHeightUl} + 20px))
-
-				margin-top: calc(8% + (#{$headerHeightUl} + 20px))
+				height: calc((100vh - (#{$defMarginVW} * 2)) - (#{$headerHeightUl} + #{$defaultGap}))
+				margin-top: calc(#{$defMarginVW} + (#{$headerHeightUl} + #{$defaultGap}))
 
 		&.vertical
 
-			margin: 8%
+			// same logic applies for vertical spacing
 
-			width: calc(100% - 16%)
-			height: calc(84% - (#{$headerHeightMb} + 20px))
+			$defMarginVH: 8vh
 
-			margin-top: calc(8% + (#{$headerHeightMb} + 20px))
+			margin: $defMarginVH
+
+			width: calc(100vw - (#{$defMarginVH} * 2))
+
+			// (100% Height - Default page margin for both sides) - Header height with extra spacing
+			height: calc((100vh - (#{$defMarginVH} * 2)) - (#{$headerHeightMb} + #{$defaultGap}))
+
+			// margin-top takes extra space because of header height
+			margin-top: calc(#{$defMarginVH} + (#{$headerHeightMb} + #{$defaultGap}))
+			margin-bottom: $defMarginVH
+			margin-left: $defMarginVH
+			margin-right: $defMarginVH
 
 			+sm
 
-				height: calc(84% - (#{$headerHeightSm} + 20px))
-
-				margin-top: calc(8% + (#{$headerHeightSm} + 20px))
+				height: calc((100vh - (#{$defMarginVH} * 2)) - (#{$headerHeightSm} + #{$defaultGap}))
+				margin-top: calc(#{$defMarginVH} + (#{$headerHeightSm} + #{$defaultGap}))
 
 			+ul
 
-				height: calc(84% - (#{$headerHeightUl} + 20px))
-
-				margin-top: calc(8% + (#{$headerHeightUl} + 20px))
+				height: calc((100vh - (#{$defMarginVH} * 2)) - (#{$headerHeightUl} + #{$defaultGap}))
+				margin-top: calc(#{$defMarginVH} + (#{$headerHeightUl} + #{$defaultGap}))
 
 
 
