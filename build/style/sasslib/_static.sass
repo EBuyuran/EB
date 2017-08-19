@@ -5,168 +5,6 @@ $headerHeightMd: 46px
 $headerHeightLg: 46px
 $headerHeightUl: 64px
 
-#hamburger
-
-	position: absolute
-	z-index: 1000
-	top: 0
-	left: 0
-
-	width: 100%
-	height: 0
-
-	overflow: hidden
-	transition: .35s all ease-in-out
-
-	.mobileNav
-
-		position: relative
-		top: 0
-		left: 0
-
-		width: 100%
-
-		padding: 8vh
-
-		background: $background-colour
-
-		+sm
-
-			display: none
-
-		#closeHamburger
-
-			position: absolute
-			top: 8vh
-			right: 8vh
-			z-index: 300
-
-			width: 20px
-			height: 20px
-
-			cursor: pointer
-
-			div
-
-				width: 16px
-				height: 2px
-
-				background: white
-
-				position: absolute
-				top: 50%
-				left: 50%
-
-				&:nth-child(1)
-
-					transform: translate(-50%, -50%) rotate(45deg)
-
-				&:nth-child(2)
-
-					transform: translate(-50%, -50%) rotate(-45deg)
-
-	ul
-
-		margin: 0
-
-		li
-
-			position: relative
-			width: 70%
-
-			margin: 12px 0
-
-			color: white
-			font-size: .9em
-			line-height: 1.25em
-
-			cursor: pointer
-
-			&:first-child
-
-				margin-top: 0
-
-			&:last-child
-
-				margin-bottom: 0
-
-			&.active > .highlight
-
-				display: block !important
-
-			&.active > span
-
-				font-family: $mf-medium
-
-			.highlight
-
-				display: none
-
-				position: absolute
-				top: -4px
-				left: -8vh
-				z-index: 100
-
-				width: 100%
-				height: 1.25em
-
-				padding: 4px 0
-				box-sizing: content-box
-
-				background: #00cdff
-
-				&:after
-
-					content: ""
-
-					position: absolute
-					right: calc(-1.25em - 8px)
-					top: 0
-
-					width: 0
-					height: 0
-
-					border-top: calc(1.25em + 8px) solid #00cdff
-					border-right: calc(1.25em + 8px) solid transparent
-
-				.dots
-
-					width: 6px
-					height: 11px
-
-					position: absolute
-					top: 8px
-					left: 14%
-
-					div
-
-						position: absolute
-
-						width: 3px
-						height: 3px
-
-						background: white
-
-						&:nth-child(1)
-
-							top: 0
-							left: 0
-
-						&:nth-child(2)
-
-							top: 4px
-							right: 0
-
-						&:nth-child(3)
-
-							bottom: 0
-							left: 0
-
-			span
-
-				position: relative
-				z-index: 200
-
 header
 
 	position: absolute
@@ -178,6 +16,12 @@ header
 
 		height: $headerHeightMb
 		line-height: $headerHeightMb
+
+		transition: .5s opacity ease-in-out
+
+		&.fadeout
+
+			opacity: 0
 
 		+sm
 
@@ -230,44 +74,126 @@ header
 					width: auto
 					height: 100%
 
-			&.hamburgerBtn
 
-				display: block !important
-				float: right
 
-				position: relative
+	.langSwitch
 
-				width: 30px
-				margin: 0
+		$langSwitchPadding: 4px;
 
-				opacity: .75
+		$langSwitchButtonSizeMb: $headerHeightMb - ($langSwitchPadding * 2)
+		$langSwitchBoxWidthMb: ($langSwitchButtonSizeMb * 2) + ($langSwitchPadding * 3)
 
-				div
+		$langSwitchButtonSizeSm: $headerHeightSm - ($langSwitchPadding * 2)
+		$langSwitchBoxWidthSm: ($langSwitchButtonSizeSm * 2) + ($langSwitchPadding * 3)
 
-					position: absolute
-					left: 50%
-					transform: translateX(-50%)
+		$langSwitchButtonSizeUl: $headerHeightUl - ($langSwitchPadding * 2)
+		$langSwitchBoxWidthUl: ($langSwitchButtonSizeUl * 2) + ($langSwitchPadding * 3)
 
-					width: 16px
-					height: 3px
+		position: absolute
+		top: 0
+		right: 0
 
-					background: black
+		width: $langSwitchBoxWidthMb
+		height: $headerHeightMb
 
-					&:nth-child(1)
+		background: $background-colour
+		border-radius: $langSwitchPadding * 1.5
 
-						top: 8px
+		+sm
 
-					&:nth-child(2)
+			width: $langSwitchBoxWidthSm
+			height: $headerHeightSm
 
-						top: 13px
+		+ul
 
-					&:nth-child(3)
+			width: $langSwitchBoxWidthUl
+			height: $headerHeightUl
 
-						top: 18px
+		.box
+
+			display: flex
+			align-items: center
+			justify-content: center
+
+			position: absolute
+			top: $langSwitchPadding
+
+			width: $langSwitchButtonSizeMb
+			height: $langSwitchButtonSizeMb
+
+			color: white
+			font-size: .7em
+
+			+sm
+
+				font-size: .9em
+
+				width: $langSwitchButtonSizeSm
+				height: $langSwitchButtonSizeSm
+
+			+ul
+
+				width: $langSwitchButtonSizeUl
+				height: $langSwitchButtonSizeUl
+
+			&.left
+
+				left: $langSwitchPadding
+
+			&.right
+
+				right: $langSwitchPadding
+
+			&.btn
+
+				background: $primary-colour
+				border-radius: $langSwitchPadding
+
+				left: $langSwitchButtonSizeMb + ($langSwitchPadding * 2)
+
+				cursor: pointer
+
+				transition: .35s all ease-in-out
 
 				+sm
 
-					display: none !important
+					left: $langSwitchButtonSizeSm + ($langSwitchPadding * 2)
+
+				+ul
+
+					left: $langSwitchButtonSizeUl + ($langSwitchPadding * 2)
+
+				&:hover
+
+					background: $primary-colour-highlighted
+
+				&:after
+
+					content: ""
+
+					position: absolute
+
+					width: 100%
+					height: 100%
+
+					background-image: url("../img/arrow.png")
+					background-position: center
+					background-repeat: no-repeat
+					background-size: 50%
+
+					transition: .35s all ease-in-out
+
+				&.switched
+
+					left: $langSwitchPadding
+
+					&:after
+
+						transform: rotate(180deg)
+
+
+
+
 
 main
 
@@ -278,6 +204,8 @@ main
 	top: 0
 	left: 0
 	z-index: 100
+
+	transition: .5s all ease-in-out
 
 	#home, #brands, #cv, #portfolio, #contact
 
@@ -302,7 +230,7 @@ main
 			// (100% Height - Default page margin for both sides) - Header height with extra spacing
 			height: calc((100vh - (#{$defMarginVW} * 2)) - (#{$headerHeightMb} + #{$defaultGap}))
 
-			// margin-top takes extra space because of header height
+			// margin-top takes extra space because of the header height
 			margin-top: calc(#{$defMarginVW} + (#{$headerHeightMb} + #{$defaultGap}))
 			margin-bottom: $defMarginVW
 			margin-left: $defMarginVW
@@ -353,3 +281,17 @@ main
 
 		opacity: 1 !important
 		pointer-events: auto !important
+
+	&.disabled
+
+		#home, #brands, #cv, #portfolio, #contact
+
+			pointer-events: none !important
+
+	&.fadeout
+
+		opacity: 0
+
+		#home, #brands, #cv, #portfolio, #contact
+
+			pointer-events: none !important

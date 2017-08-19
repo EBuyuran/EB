@@ -1,0 +1,287 @@
+{
+
+	"web" : {
+
+		"en": {
+
+			"nav": ["home", "brands", "cv", "portfolio", "contact"],
+
+			"home": {
+
+				"h1": "Hello. My name is <span class='mf-medium'>Efe Buyuran</span>, and I’m a <span class='mf-medium'>Front-End Developer</span> from <span class='mf-medium'>Istanbul</span> with <span class='mf-medium'>10</span> years of experience.",
+				"h2": "I specialize in creating beautiful web applications which fluidly runs through wide range of screens and devices.",
+				"a": "VIEW MY WORK"
+
+			},
+
+			"cv": {
+
+				"aboutTitle": "About Me",
+				"aboutText": [
+					"Majoring in Visual Communication at Istanbul Commerce University, my enthusiasm for interactive web design led me to pursue essential web technologies where I met with the tools of a Front-End Developer. Most of my technical proficiency derives from long hours of self-taught research.",
+					"I can deliever complex projects from scratch, build interactive banners, provide graphic support and technical insight where necessary. I've had the privilege of working for global brands (such as Hyundai & Huawei), as well as local entities (like Opet. N'oluyo, 1V1Y) either directly or through my employer.",
+					"In the line of duty, I'm obsessively perfectionist, always trying to provide the most optimal solution. I'm striving to be as versatile as I can to learn whatever is necessary to finish the job. I believe in organized, easily maintainable, lightweight, cross-browser compliant code to deploy rapidly on any project as I enjoy working efficiently in a creative environment.",
+					"<a href='cv/cv-efebuyuran.pdf' target='_blank'>Download CV</a>"
+				],
+				"skillsTitle": "Skills",
+				"frontendTitle": "Front-End",
+				"frontendList": ["PUG -> HTML5", "SASS -> CSS3", "Native Javascript", "AJAX", "NodeJS & Taskrunners", "Dynamic SVG", "Speed Optimisation", "SEO Enhancements", "Google Analytics", "Interactive HTML5 Banners"],
+				"toolsTitle": "Tools & Software",
+				"toolList": ["Adobe Photoshop", "Adobe Illustrator", "Adobe Audition", "Adobe Premiere", "Adobe Flash", "Sublime Text", "Visual Studio"],
+				"academicTitle": "Academic",
+				"academicList": [
+					{
+						"schoolTitle": "Istanbul Commerce University",
+						"education": "College - Visual Communication",
+						"timeframe": "2009 - 2015"
+					},
+					{
+						"schoolTitle": "Yelkikanat Vocational High School",
+						"education": "High School",
+						"timeframe": "2004 - 2009"
+					},
+					{
+						"schoolTitle": "ISTEK Foundation",
+						"education": "Middle School",
+						"timeframe": "2000 - 2004"
+					},
+					{
+						"schoolTitle": "Eyuboglu Educational Institutions",
+						"education": "Primary Education",
+						"timeframe": "1995 - 2000"
+					}
+				],
+				"workTitle": "Work Experience",
+				"workList": [
+					{
+						"link": "http://theking.com.tr",
+						"company": "theKingCCA",
+						"title": "Front-End Developer",
+						"timeframe": "April '16 - Present",
+						"logoURL": "img/jobExp/theking.png",
+						"imgClass": "theking"
+					},
+					{
+						"link": "http://noluyo.tv",
+						"company": "N'oluyo",
+						"title": "Front-End Developer",
+						"timeframe": "September - December '15",
+						"logoURL": "img/jobExp/noluyo.png",
+						"imgClass": "noluyo"
+					},
+					{
+						"link": "http://www.tsk.tr/",
+						"company": "Empire",
+						"title": "Stormtrooper",
+						"timeframe": "February - July '15",
+						"logoURL": "img/jobExp/empire.png",
+						"imgClass": "empire"
+					},
+					{
+						"link": "http://1v1y.com",
+						"company": "1V1Y",
+						"title": "Graphic Designer",
+						"timeframe": "Augustus - October '13",
+						"logoURL": "img/jobExp/1v1y.png",
+						"imgClass": "empire"
+					},
+					{
+						"link": "http://pixelcreative.com.tr",
+						"company": "Pixel Creative",
+						"title": "Jnr. Front-End Developer",
+						"timeframe": "3 Months",
+						"logoURL": "img/jobExp/pixelcreative.png",
+						"imgClass": "empire"
+					},
+					{
+						"link": "http://hurelonline.com/yaratici_iletisim.aspx",
+						"company": "Feridun Hürel Yaratıcı İletişim",
+						"title": "Jnr. Graphic Designer",
+						"timeframe": "6 Months",
+						"logoURL": "img/jobExp/feridunhurel.png",
+						"imgClass": "empire"
+					}
+				]
+
+			},
+
+			"contact": "Please send me an email at <a href='mailto:efebuyuran@gmail.com'>efebuyuran@gmail.com</a> or get in touch with me through one of my social media accounts."
+
+		},
+
+		"fr": {
+
+			"nav": ["accueil", "marques", "cv", "portefeuille", "contact"],
+
+			"home": {
+
+				"h1": "Bonjour. Je m'appelle <span class='mf-medium'>Efe Buyuran</span>, et je suis un Développeur <span class='mf-medium'>Front-End</span> d'<span class='mf-medium'>Istanbul</span> avec <span class='mf-medium'>10</span> ans d'expérience.",
+				"h2": "Je me spécialise dans la création de belles applications Web qui fonctionnent aisément à travers une large gamme d'écrans et d'appareils.",
+				"a": "VOIR MON TRAVAIL"
+
+			},
+
+			"cv": {
+
+				"aboutTitle": "A propos de moi",
+				"aboutText": [
+					"Majeure en communication visuelle à l'Université de Commerce d'Istanbul, mon enthousiasme pour la conception web interactive m'a amené à poursuivre des technologies web essentielles où j'ai rencontré les outils d'un développeur Front-End. La plupart de mes compétences techniques découlent de longues heures de recherche autodidacte.",
+					"Je peux livrer des projets complexes à partir de zéro, créer des bannières interactives, fournir un support graphique et un aperçu technique où nécessaire. J'ai eu le privilège de travailler pour des marques mondiales (tel que Hyundai & Huawei), ainsi que des entités locales (comme Opet. N'oluyo, 1V1Y), soit directement ou soit par l'intermédiaire de mon employeur.",
+					"Dans la ligne de service, je suis obsessionnellement perfectionniste, essayant toujours de fournir la solution la plus optimale. Je m'efforce d'être aussi polyvalent que possible pour apprendre tout ce qui est nécessaire pour terminer le travail. Je crois en un code organisé, facile à entretenir, léger et compatible avec tous les navigateurs pour déployer rapidement sur tout projet car j'aime travailler efficacement dans un environnement créatif.",
+					"<a href='cv/cv-efebuyuran.pdf' target='_blank'>Télécharger CV</a>"
+				],
+				"skillsTitle": "Compétences",
+				"frontendTitle": "Front-End",
+				"frontendList": ["PUG -> HTML5", "SASS -> CSS3", "Native Javascript", "AJAX", "NodeJS & Taskrunners", "Dynamic SVG", "Optimisation de vitesse", "Améliorations SEO", "Google Analytics", "Bannières HTML5 interactives"],
+				"toolsTitle": "Outils et Logiciels",
+				"toolList": ["Adobe Photoshop", "Adobe Illustrator", "Adobe Audition", "Adobe Premiere", "Adobe Flash", "Sublime Text", "Visual Studio"],
+				"academicTitle": "Académique",
+				"academicList": [
+					{
+						"schoolTitle": "Université de Commerce d'Istanbul",
+						"education": "College - Visual Communication",
+						"timeframe": "2009 - 2015"
+					},
+					{
+						"schoolTitle": "Ecole secondaire professionnelle de Yelkikanat",
+						"education": "Vocational High School",
+						"timeframe": "2004 - 2009"
+					},
+					{
+						"schoolTitle": "Fondation ISTEK",
+						"education": "Middle School",
+						"timeframe": "2000 - 2004"
+					},
+					{
+						"schoolTitle": "Institutions éducatives Eyuboglu",
+						"education": "Primary Education",
+						"timeframe": "1995 - 2000"
+					}
+				],
+				"workTitle": "Expérience professionnelle",
+				"workList": [
+					{
+						"link": "http://theking.com.tr",
+						"company": "theKingCCA",
+						"title": "Développeur Front-End",
+						"timeframe": "April '16 - Present",
+						"logoURL": "img/jobExp/theking.png",
+						"imgClass": "theking"
+					},
+					{
+						"link": "http://noluyo.tv",
+						"company": "N'oluyo",
+						"title": "Développeur Front-End",
+						"timeframe": "September - December '15",
+						"logoURL": "img/jobExp/noluyo.png",
+						"imgClass": "noluyo"
+					},
+					{
+						"link": "http://www.tsk.tr/",
+						"company": "Empire",
+						"title": "Stormtrooper",
+						"timeframe": "February - July '15",
+						"logoURL": "img/jobExp/empire.png",
+						"imgClass": "empire"
+					},
+					{
+						"link": "http://1v1y.com",
+						"company": "1V1Y",
+						"title": "Concepteur Graphique",
+						"timeframe": "Augustus - October '13",
+						"logoURL": "img/jobExp/1v1y.png",
+						"imgClass": "empire"
+					},
+					{
+						"link": "http://pixelcreative.com.tr",
+						"company": "Pixel Creative",
+						"title": "Jnr. Développeur Front-End",
+						"timeframe": "3 Months",
+						"logoURL": "img/jobExp/pixelcreative.png",
+						"imgClass": "empire"
+					},
+					{
+						"link": "http://hurelonline.com/yaratici_iletisim.aspx",
+						"company": "Feridun Hürel Yaratıcı İletişim",
+						"title": "Jnr. Concepteur Graphique",
+						"timeframe": "6 Months",
+						"logoURL": "img/jobExp/feridunhurel.png",
+						"imgClass": "empire"
+					}
+				]
+
+			},
+
+			"contact": "Veuillez m’envoyer un email à <a href='mailto:efebuyuran@gmail.com'>efebuyuran@gmail.com</a> ou contactez-moi à travers l’un de mes comptes de médias sociaux."
+
+		},
+
+		"brands": [
+
+			"img/brands/hyundai.png",
+			"img/brands/huawei.png",
+			"img/brands/koc.png",
+			"img/brands/aygaz.png",
+			"img/brands/eczacibasi.png",
+			"img/brands/noluyo.png",
+			"img/brands/1v1y.png"
+
+		],
+
+		"portfolio": [
+
+			{
+				"size": "one",
+				"linkURL": "https://codepen.io/ebuyuran/pen/VWVOLW",
+				"imgSRC": "img/portfolio/pipboy.png"
+			},
+			{
+				"size": "two",
+				"linkURL": "http://huaweiakademi.com/",
+				"imgSRC": "img/portfolio/huawei.jpg"
+			},
+			{
+				"size": "one",
+				"linkURL": "portfolio/aygaz1000/",
+				"imgSRC": "img/portfolio/aygaz1000.jpg"
+			},
+			{
+				"size": "one",
+				"linkURL": "portfolio/hyundaisurprizi/",
+				"imgSRC": "img/portfolio/hyundaisurprizi.jpg"
+			},
+			{
+				"size": "one",
+				"linkURL": "portfolio/huaweilandingpage/",
+				"imgSRC": "img/portfolio/huaweilandingpage.jpg"
+			},
+			{
+				"size": "one",
+				"linkURL": "portfolio/hyundaieuro2016/",
+				"imgSRC": "img/portfolio/hyundaieuro2016.jpg"
+			},
+			{
+				"size": "one",
+				"linkURL": "portfolio/aygaztasarruf/",
+				"imgSRC": "img/portfolio/aygaztasarruf.jpg"
+			},
+			{
+				"size": "one",
+				"linkURL": "http://www.ticaretinyeri.com/",
+				"imgSRC": "img/portfolio/ticaretinyeri.jpg"
+			},
+			{
+				"size": "one",
+				"linkURL": "portfolio/noluyokaydol/",
+				"imgSRC": "img/portfolio/noluyokaydol.jpg"
+			},
+			{
+				"size": "two",
+				"linkURL": "portfolio/aygazistasyon/",
+				"imgSRC": "img/portfolio/aygazistasyon.jpg"
+			}
+		]
+
+	}
+
+}

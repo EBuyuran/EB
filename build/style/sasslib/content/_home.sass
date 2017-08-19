@@ -3,6 +3,9 @@
 
 	height: 100%
 
+	display: flex
+	align-items: center
+
 	.content
 
 		+sm
@@ -64,6 +67,8 @@
 		a.btn
 
 			display: none
+			float: none
+			clear: none
 
 			width: 150px
 			text-align: center
@@ -81,6 +86,12 @@
 			background: $background-colour
 			border-radius: 6px
 
+			transition: .35s all ease-in-out
+
+			&:hover
+
+				background: $primary-colour
+
 			+sm
 
 				display: block
@@ -89,7 +100,7 @@
 
 	&.active + .bgImg
 
-		opacity: .5
+		opacity: .65
 
 
 
@@ -111,3 +122,5 @@
 	pointer-events: none
 
 	opacity: 0
+
+	transition: .75s opacity ease-in-out

@@ -1,0 +1,151 @@
+
+#hamburgerBtn
+
+	display: block !important
+
+	position: absolute
+	z-index: 1500
+
+	width: 30px
+	height: 30px
+	margin: 0
+
+	cursor: pointer
+
+	div
+
+		position: absolute
+		left: 50%
+		transform: translate(-50%, 0) rotate(0deg)
+
+		width: 16px
+		height: 3px
+
+		background: black
+		transition: .35s all ease-in-out
+
+		&:nth-child(1)
+
+			top: 8px
+
+		&:nth-child(2)
+
+			top: 13px
+
+		&:nth-child(3)
+
+			top: 18px
+
+	&.expanded
+
+		div
+
+			background: white
+
+			&:nth-child(1)
+
+				height: 4px
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%) rotate(405deg)
+
+			&:nth-child(2)
+
+				opacity: 0
+
+			&:nth-child(3)
+
+				height: 4px
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%) rotate(-405deg)
+
+
+
+	+sm
+
+		display: none !important
+
+
+
+
+
+#hamburger
+
+	position: absolute
+	z-index: 1000
+	top: 0
+	left: 0
+
+	width: 100%
+	height: 0
+
+	overflow: hidden
+	transition: .35s all ease-in-out
+
+	.mobileNav
+
+		position: relative
+		top: 0
+		left: 0
+
+		width: 100%
+
+		padding: 8vh
+
+		background: $background-colour
+
+		+sm
+
+			display: none
+
+	ul
+
+		margin: 0
+
+		li
+
+			position: relative
+			width: 70%
+
+			margin: 12px 0
+
+			color: white
+			font-size: .9em
+			line-height: 1.25em
+
+			cursor: pointer
+
+			&:first-child
+
+				margin-top: 0
+
+			&:last-child
+
+				margin-bottom: 0
+
+			&.active > .highlight
+
+				display: block !important
+
+			&.active > span
+
+				font-family: $mf-medium
+
+			span
+
+				position: relative
+				z-index: 200
+
+			&.active:before
+
+				content: ""
+
+				position: absolute
+
+				left: -14px
+				top: 0
+				width: 4px
+				height: 100%
+
+				background: $primary-colour

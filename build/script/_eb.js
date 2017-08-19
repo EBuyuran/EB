@@ -1,6 +1,8 @@
 
 "use strict";
 
+// Responisive breaking points made avaible to whole document here.
+
 var screenSm, screenMd, screenLg;
 
 screenSm = 768;
@@ -14,11 +16,11 @@ var EB = {
 	init: function() {
 
 		EB.Background.Gradient();
-		EB.PageStaticLayout.init();
 		EB.Background.Stars.OnPageLoad();
+		EB.StaticDOMLayout.init();
 		EB.Hamburger.init();
-		EB.PageContent.init();
 		EB.PageSwitcher.init();
+		EB.Content.SwitchLanguage.init();
 
 		window.addEventListener("resize", EB.ResizeFunctions.init);
 
@@ -29,9 +31,8 @@ var EB = {
 		init: function() {
 
 			EB.Background.Gradient();
-			EB.PageStaticLayout.init();
-			EB.Hamburger.init();
-			EB.PageContent.init();
+			EB.StaticDOMLayout.init();
+			EB.PageLayout.Portfolio.init();
 
 		}
 
@@ -42,6 +43,292 @@ var EB = {
 		RandomNumber: function(min, max) {
 
 			return Math.floor(Math.random()*(max-min+1)+min);
+
+		},
+
+		ArrayLister: function(array, tagName) {
+
+			var list = "", arraySize;
+
+			arraySize = array.length;
+
+			for (var i = 0; i < arraySize; i++) {
+
+				list += "<" + tagName + ">" + array[i] + "</" + tagName + ">";
+
+			}
+
+			return list;
+
+		}
+
+	},
+
+	Content: {
+
+		SwitchLanguage: {
+
+			init: function() {
+
+				var btn;
+
+				btn = document.getElementsByClassName("langSwitch")[0].getElementsByClassName("btn")[0];
+
+				btn.addEventListener("click", function() {
+
+					if (this.classList.contains("switched")) {
+
+						this.classList.remove("switched");
+						EB.Content.Distribute.init("en", false);
+
+					} else {
+
+						this.classList.add("switched");
+						EB.Content.Distribute.init("fr", false);
+
+					}
+
+				});
+
+			}
+
+		},
+
+		Distribute: {
+
+			init: function(lang, pageLoad) {
+
+				var main = document.getElementsByTagName("main")[0], nav = document.getElementsByTagName("header")[0].getElementsByTagName("ul")[0];
+
+				if (pageLoad == true) {
+
+					EB.Content.Distribute.Translate(lang);
+
+				} else {
+
+					main.classList.add("fadeout");
+					nav.classList.add("fadeout");
+
+					setTimeout(function() {
+
+						EB.Content.Distribute.Translate(lang);
+
+					}, 550);
+
+					setTimeout(function() {
+
+						main.classList.remove("fadeout");
+						nav.classList.remove("fadeout");
+
+					}, 600);
+
+				}
+
+			},
+
+			Translate: function(lang) {
+
+				EB.Content.Distribute.Sections.static(lang);
+				EB.Content.Distribute.Sections.home(lang);
+				EB.Content.Distribute.Sections.brands(lang);
+				EB.Content.Distribute.Sections.cv(lang); 
+				EB.Content.Distribute.Sections.portfolio(lang);
+				EB.Content.Distribute.Sections.contact(lang);
+
+			},
+
+			Sections: {
+
+				static: function(lang) {
+
+					// Populate hamburger navigation.
+
+					var htmlDOM, hamburgerNav, navList, navSize;
+
+					htmlDOM = document.getElementsByTagName("html")[0];
+					hamburgerNav = document.getElementById("hamburger").getElementsByTagName("ul")[0];
+					navList = content.web[lang].nav;
+					navSize = navList.length;
+					htmlDOM.setAttribute("lang", lang);
+
+					for (var i = 0; i < navSize; i++) {
+
+						var current = hamburgerNav.getElementsByTagName("li")[i].getElementsByTagName("span")[0];
+						current.innerHTML = navList[i];
+
+					}
+
+					// Populating desktop navigation will be done manually because first DOM is an image instead of text.
+
+					var desktopNav = document.getElementsByTagName("header")[0];
+
+					desktopNav.getElementsByClassName("brands")[0].innerHTML = 	navList[1];
+					desktopNav.getElementsByClassName("cv")[0].innerHTML = navList[2];
+					desktopNav.getElementsByClassName("portfolio")[0].innerHTML = navList[3];
+					desktopNav.getElementsByClassName("contact")[0].innerHTML = navList[4];
+
+				},
+
+				home: function(lang) {
+
+					var holder;
+
+					holder = document.getElementById("home").getElementsByClassName("content")[0];
+
+					holder.getElementsByTagName("h1")[0].innerHTML = content.web[lang].home.h1;
+					holder.getElementsByTagName("h2")[0].innerHTML = content.web[lang].home.h2;
+					holder.getElementsByTagName("a")[0].innerHTML = content.web[lang].home.a;
+
+				},
+
+				brands: function(lang) {
+
+					var holder, brandsList, brandsNumber, item, img, list = "";
+
+					holder = document.getElementById("brands").getElementsByClassName("container")[0];
+					brandsList = content.web.brands;
+					brandsNumber = brandsList.length;
+
+					for (var i = 0; i < brandsNumber; i++) {
+
+						var list;
+
+						list += "<div class='item'><img src='" + brandsList[i] + "'></div>";
+
+					}
+
+					holder.innerHTML = list;
+
+				},
+
+				cv: function(lang) {
+
+					var holder, aboutBlock, skillsAndAcademicBlock, workXPBlock;
+
+					holder = document.getElementById("cv");
+
+					aboutBlock = holder.getElementsByClassName("block")[0];
+					skillsAndAcademicBlock = holder.getElementsByClassName("block")[1];
+					workXPBlock = holder.getElementsByClassName("block")[2];
+
+					function about() {
+
+						var blockContent = "";
+
+						blockContent += "<h3>" + content.web[lang].cv.aboutTitle + "</h3>";
+						blockContent += EB.CommonFunctions.ArrayLister(content.web[lang].cv.aboutText, "p");
+
+						aboutBlock.innerHTML = blockContent;
+
+					}
+
+					about();
+
+					function skillsAndAcademic() {
+
+						var blockContent = "", academicList, academicListSize, academicListHTML = "";
+
+						blockContent += "<h3>" + content.web[lang].cv.skillsTitle + "</h3>";
+						blockContent += "<div class='list'>";
+						blockContent += "<h4>" + content.web[lang].cv.frontendTitle + "</h4>";
+						blockContent += "<ul class='listed'>";
+						blockContent += EB.CommonFunctions.ArrayLister(content.web[lang].cv.frontendList, "li");
+						blockContent += "</ul></div>";
+						blockContent += "<div class='list'>";
+						blockContent += "<h4>" + content.web[lang].cv.toolsTitle + "</h4>";
+						blockContent += "<ul class='listed'>";
+						blockContent += EB.CommonFunctions.ArrayLister(content.web[lang].cv.toolList, "li");
+						blockContent += "</ul></div>";
+						blockContent += "<div class='seperator'></div>";
+						blockContent += "<h3>" + content.web[lang].cv.academicTitle + "</h3>";
+
+						academicList = content.web[lang].cv.academicList;
+						academicListSize = academicList.length;
+
+						for (var i = 0; i < academicListSize; i++) {
+
+							academicListHTML += "<div class='school'>";
+							academicListHTML += "<div class='name'>" + academicList[i].schoolTitle + "</div>";
+							academicListHTML += "<div class='container'>";
+							academicListHTML += "<div class='type'>" + academicList[i].education + "</div>";
+							academicListHTML += "<div class='timeframe'>" + academicList[i].timeframe + "</div>";
+							academicListHTML += "</div></div>";
+
+						}
+
+						blockContent += academicListHTML;
+
+						skillsAndAcademicBlock.innerHTML = blockContent;
+
+					}
+
+					skillsAndAcademic();
+
+					function workXP() {
+
+						var blockContent = "", workXPList, workXPListSize;
+
+						workXPList = content.web[lang].cv.workList;
+						workXPListSize = workXPList.length;
+
+						blockContent += "<h3>" + content.web[lang].cv.workTitle + "</h3>";
+
+						for (var i = 0; i < workXPListSize; i++) {
+
+							blockContent += "<div class='job'>";
+							blockContent += "<div class='info'>";
+							blockContent += "<div class='company'>";
+							blockContent += "<a href='" + workXPList[i].link + "' target='_blank'>" + workXPList[i].company + "</a>";
+							blockContent += "</div>";
+							blockContent += "<div class='title'>" + workXPList[i].title + "</div>";
+							blockContent += "<div class='timeframe'>" + workXPList[i].timeframe + "</div>";
+							blockContent += "</div>";
+							blockContent += "<div class='logo'>";
+							blockContent += "<img class='" + workXPList[i].imgClass + "' src='" + workXPList[i].logoURL + "'>";
+							blockContent += "</div></div>";
+
+						}
+
+						workXPBlock.innerHTML = blockContent;
+
+					}
+
+					workXP();
+
+				},
+
+				portfolio: function(lang) {
+
+					var holder, portfolio, portfolioSize, blockContent = "";
+
+					holder = document.getElementById("portfolio").getElementsByClassName("container")[0];
+					portfolio = content.web.portfolio;
+					portfolioSize = portfolio.length;
+
+					for (var i = 0; i < portfolioSize; i++) {
+
+						blockContent += "<div class='item " + portfolio[i].size + "'>";
+						blockContent += "<a href='" + portfolio[i].linkURL + "' target='_blank'>";
+						blockContent += "<img src='" + portfolio[i].imgSRC + "'>";
+						blockContent += "</a></div>";
+
+					}
+
+					holder.innerHTML = blockContent;
+
+					// Arrange page layout only after AJAX content is properly placed.
+
+					EB.PageLayout.Portfolio.init();
+
+				},
+
+				contact: function(lang) {
+
+					document.getElementById("contact").getElementsByTagName("p")[0].innerHTML = content.web[lang].contact;
+
+				}
+
+			}
 
 		}
 
@@ -294,12 +581,12 @@ var EB = {
 
 	},
 
-	PageStaticLayout: {
+	StaticDOMLayout: {
 
 		init: function() {
 
-			EB.PageStaticLayout.PageShape();
-			EB.PageStaticLayout.HeaderPadding();
+			EB.StaticDOMLayout.PageShape();
+			EB.StaticDOMLayout.HeaderPadding();
 
 		},
 
@@ -323,19 +610,45 @@ var EB = {
 
 			if (EB.ScreenSize.Width() > EB.ScreenSize.Height()) {
 
-				EB.PageStaticLayout.Horizontal("home");
-				EB.PageStaticLayout.Horizontal("brands");
-				EB.PageStaticLayout.Horizontal("cv");
-				EB.PageStaticLayout.Horizontal("portfolio");
-				EB.PageStaticLayout.Horizontal("contact");
+				EB.StaticDOMLayout.Horizontal("home");
+				EB.StaticDOMLayout.Horizontal("brands");
+				EB.StaticDOMLayout.Horizontal("cv");
+				EB.StaticDOMLayout.Horizontal("portfolio");
+				EB.StaticDOMLayout.Horizontal("contact");
+
+				document.getElementById("hamburgerBtn").style.top = "8vw";
+				document.getElementById("hamburgerBtn").style.right = "8vw";
+
+				if (EB.ScreenSize.Width() < screenSm) {
+
+					document.getElementsByClassName("langSwitch")[0].style.marginRight = "calc(8vw + 40px)";
+
+				} else {
+
+					document.getElementsByClassName("langSwitch")[0].style.marginRight = "8vw";
+
+				}
 
 			} else {
 
-				EB.PageStaticLayout.Vertical("home");
-				EB.PageStaticLayout.Vertical("brands");
-				EB.PageStaticLayout.Vertical("cv");
-				EB.PageStaticLayout.Vertical("portfolio");
-				EB.PageStaticLayout.Vertical("contact");
+				EB.StaticDOMLayout.Vertical("home");
+				EB.StaticDOMLayout.Vertical("brands");
+				EB.StaticDOMLayout.Vertical("cv");
+				EB.StaticDOMLayout.Vertical("portfolio");
+				EB.StaticDOMLayout.Vertical("contact");
+
+				document.getElementById("hamburgerBtn").style.top = "8vh";
+				document.getElementById("hamburgerBtn").style.right = "8vh";
+
+				if (EB.ScreenSize.Width() < screenSm) {
+
+					document.getElementsByClassName("langSwitch")[0].style.marginRight = "calc(8vh + 40px)";
+
+				} else {
+
+					document.getElementsByClassName("langSwitch")[0].style.marginRight = "8vh";
+
+				}
 
 			}
 
@@ -399,55 +712,102 @@ var EB = {
 
 	},
 
+	PageLayout: {
+
+		Portfolio: {
+
+			init: function() {
+
+				var portfolio, itemHeight, itemList, itemCount;
+
+				portfolio = document.getElementById("portfolio");
+				itemHeight = portfolio.getElementsByClassName("one")[0].offsetWidth;
+				itemList = portfolio.getElementsByClassName("item");
+				itemCount = itemList.length;
+
+				for (var i = 0; i < itemCount; i++) {
+
+					if (EB.ScreenSize.Width() > screenSm) {
+
+						itemList[i].style.height = itemHeight + "px";
+
+					} else {
+
+						itemList[i].setAttribute("style", "");
+
+					}
+
+				}
+
+			}
+
+		}
+
+	},
+
 	Hamburger: {
 
 		init: function() {
 
-			if (EB.ScreenSize.Width() < screenSm) {
+			var main, button;
 
-				var logo, hamburgerBtn, closeHamburger;
+			main = document.getElementsByTagName("main")[0];
+			button = document.getElementById("hamburgerBtn");
 
-				logo = document.getElementsByClassName("logo")[0];
-				closeHamburger = document.getElementById("closeHamburger");
-				hamburgerBtn = document.getElementsByClassName("hamburgerBtn")[0];
+			button.addEventListener("click", function() {
 
-				hamburgerBtn.addEventListener("click", function() {
+				if (button.classList.contains("expanded")) {
+
+					EB.Hamburger.Collapse();
+
+				} else {
 
 					EB.Hamburger.Expand();
 
-				});
+				}
 
-				closeHamburger.addEventListener("click", function() {
+			});
 
-					EB.Hamburger.Close();
+			// Collapse hamburger when clicked elsewhere.
 
-				});
+			main.addEventListener("click", function() {
 
-			}
+				EB.Hamburger.Collapse();
+
+			});
 
 		},
 
 		Expand: function() {
 
-			var hamburger, navigation, navSize;
+			console.log("uieiue")
 
+			var main, button, hamburger, navigation, navSize;
+
+			main = document.getElementsByTagName("main")[0];
+			button = document.getElementById("hamburgerBtn");
 			hamburger = document.getElementById("hamburger");
+
+			button.classList.add("expanded");
+			main.classList.add("disabled");
+
 			navigation = hamburger.getElementsByClassName("mobileNav")[0];
 			navSize = navigation.offsetHeight;
-
 			hamburger.style.height = navSize + "px";
 
 		},
 
-		Close: function() {
+		Collapse: function() {
 
-			var hamburger, navigation, navSize;
+			var main, button, hamburger;
 
+			main = document.getElementsByTagName("main")[0];
+			button = document.getElementById("hamburgerBtn");
 			hamburger = document.getElementById("hamburger");
-			navigation = hamburger.getElementsByClassName("mobileNav")[0];
-			navSize = navigation.offsetHeight;
 
 			hamburger.style.height = 0;
+			button.classList.remove("expanded");
+			main.classList.remove("disabled");
 
 		}
 
@@ -490,8 +850,10 @@ var EB = {
 
 			if (oldPage !== newPage) {
 
-				EB.Hamburger.Close();
+				EB.Hamburger.Collapse();
 				EB.PageSwitcher.ChangePage(oldPage, newPage);
+
+				// Mark new page as active page in hamburger menu.
 
 				var hamburger, children, childrenSize;
 
@@ -499,6 +861,8 @@ var EB = {
 				hamburger = hamburger.getElementsByTagName("ul")[0];
 				children = hamburger.children;
 				childrenSize = children.length;
+
+				// .35s timeout is there to ensure that the change doesn't trigger instantaneously before the collapse of hamburger.
 
 				setTimeout(function() {
 
@@ -549,88 +913,33 @@ var EB = {
 
 		}
 
-	},
-
-	PageContent: {
-
-		init: function() {
-
-			EB.PageContent.Home.init();
-			EB.PageContent.Portfolio.init();
-
-		},
-
-		Home: {
-
-			init: function() {
-
-				// This complicated function centers the welcome message exatcly to the vertical center of the page and rest of the content below it.
-
-				var welcome, welcomeHeight, calculate, profileImg;
-
-				welcome = home.getElementsByClassName("welcome")[0];
-				welcomeHeight = welcome.offsetHeight;
-				profileImg = document.getElementById("home").getElementsByClassName("bgImg")[0];
-
-				if (EB.ScreenSize.Width() > EB.ScreenSize.Height()) {
-
-					calculate = ((EB.ScreenSize.Height() - (EB.ScreenSize.Width() * 0.2)) / 2) - (welcomeHeight / 2);
-
-				} else {
-
-					calculate = ((EB.ScreenSize.Width() - (EB.ScreenSize.Height() * 0.2)) / 2) - (welcomeHeight / 2);
-
-				}
-
-				home.getElementsByClassName("content")[0].style.top = calculate + "px";
-
-			}
-
-		},
-
-		Portfolio: {
-
-			init: function() {
-
-				var portfolio, portfolioWidth, itemHeight, itemList, itemCount;
-
-				portfolio = document.getElementById("portfolio");
-				portfolioWidth = portfolio.offsetWidth;
-				itemHeight = portfolioWidth / 4;
-
-				// 30px is the margin value;
-
-				itemList = portfolio.getElementsByClassName("item");
-				itemCount = itemList.length;
-
-				for (var i = 0; i < itemCount; i++) {
-
-					if (EB.ScreenSize.Width() > screenSm) {
-
-						itemList[i].style.height = itemHeight + "px";
-
-					} else {
-
-						itemList[i].setAttribute("style", "");
-
-					}
-
-				}
-
-			}
-
-		}
-
 	}
 
 };
 
-EB.init();
+
+
+var content, ajax = new XMLHttpRequest();
+
+ajax.onreadystatechange = function() {
+
+	if (this.readyState == 4 && this.status == 200) {
+
+		content = JSON.parse(this.responseText);
+		EB.init();
+		EB.Content.Distribute.init("en", true);
+
+	};
+
+}
+
+ajax.open("GET", "content.json", true);
+ajax.send();
 
 window.addEventListener("load", function() {
 
-	// Show website when page fully loads.
+	// Show the website only when page fully loads.
 
-	EB.PageStaticLayout.RemoveOverlay();
+	EB.StaticDOMLayout.RemoveOverlay();
 
 });

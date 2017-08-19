@@ -1,0 +1,368 @@
+include puglib/variables.pug
+
+doctype html
+
+html(lang="en")
+
+	head
+
+		include puglib/head.pug
+
+	body
+
+		#overlay
+		#background
+		#stars
+
+
+
+		#hamburgerBtn
+
+			div
+			div
+			div
+
+		#hamburger
+
+			.mobileNav
+
+				ul
+
+					li.home.active
+
+						span home
+
+					li.brands
+
+						span brands
+
+					li.cv
+
+						span cv
+
+					li.portfolio
+
+						span portfolio
+
+					li.contact
+
+						span contact
+
+		header
+
+			ul.nav
+
+				li.home.logo
+
+					img(src="img/logo.svg" alt="Logo")
+
+				li.brands brands
+				li.cv cv
+				li.portfolio portfolio
+				li.contact contact
+
+		main
+
+			#home.active
+
+				.content
+
+					h1.welcome Hello. My name is #[span.mf-medium Efe Buyuran], and I’m a  #[span.mf-medium Front-End Developer] from #[span.mf-medium Istanbul] with #[span.mf-medium 10] years of experience.
+
+					h2.shortie I specialize in creating beautiful web applications which fluidly runs through wide range of screens and devices.
+
+					a.btn.portfolio(href=vl) VIEW MY WORK
+
+			.bgImg
+
+			#brands
+
+				.container
+
+					.item
+
+						img(src="img/brands/hyundai.png")
+
+					.item
+
+						img(src="img/brands/huawei.png")
+
+					.item
+
+						img(src="img/brands/koc.png")
+
+					.item
+
+						img(src="img/brands/aygaz.png")
+
+					.item
+
+						img(src="img/brands/eczacibasi.png")
+
+					.item
+
+						img(src="img/brands/noluyo.png")
+
+					.item
+
+						img(src="img/brands/1v1y.png")
+
+			#cv
+
+				.block
+
+					h3 About Me
+
+					p Majoring in Visual Communication at Istanbul Commerce University, my enthusiasm for interactive web design led me to pursue essential web technologies where I met with the tools of a Front-End Developer. Most of my technical proficiency derives from long hours of self-taught research.
+
+					p I can deliever complex projects from scratch, build interactive banners, provide graphic support and technical insight where necessary. I've had the privilege of working for global brands (such as Hyundai & Huawei), as well as local entities (like Opet. N'oluyo, 1V1Y) either directly or through my employer.
+
+					p In the line of duty, I'm obsessively perfectionist, always trying to provide the most optimal solution. I'm striving to be as versatile as I can to learn whatever is necessary to finish the job. I believe in organized, easily maintainable, lightweight, cross-browser compliant code to deploy rapidly on any project as I enjoy working efficiently in a creative environment.
+
+					p
+
+						a(href="cv/cv-efebuyuran.pdf" target="_blank") Download CV
+
+				.block
+
+					h3 Skills
+
+					.list
+
+						h4 Front-End
+
+						ul.listed
+
+							li PUG -> HTML5
+							li SASS -> CSS3
+							li Native Javascript
+							li AJAX
+							li NodeJS & Taskrunners
+							li Dynamic SVG
+							li Speed Optimisation
+							li SEO Enhancements
+							li Google Analytics
+							li Interactive HTML5 Banners
+
+					.list
+
+						h4 Tools & Software
+
+						ul.listed
+
+							li Adobe Photoshop
+							li Adobe Illustrator
+							li Adobe Audition
+							li Adobe Premiere
+							li Adobe Flash
+							li Sublime Text
+							li Visual Studio
+
+					.seperator
+
+					h3 Academic
+
+					.school
+
+						.name Istanbul Ticaret Üniversitesi
+
+						.container
+
+							.type College - Visual Communication
+
+							.timeframe 2009 - 2015
+
+					.school
+
+						.name Yelkikanat Anadolu Meslek Lisesi
+
+						.container
+
+							.type Vocational High School
+
+							.timeframe 2004 - 2009
+
+					.school
+
+						.name İstek Acıbadem Koleji
+
+						.container
+
+							.type Middle School
+
+							.timeframe 2000 - 2004
+
+					.school
+
+						.name Eyüboğlu Koleji
+
+						.container
+
+							.type Primary Education
+
+							.timeframe 1995 - 2000
+
+				.block
+
+					h3 Work Experience
+
+					.job
+
+						.info
+
+							.company
+								a(href="http://theking.com.tr" target="_blank") theKingCCA
+							.title Front-End Developer
+							.timeframe April '16 - Present
+
+						.logo
+
+							img.theking(src="img/jobExp/theking.png")
+
+					.job
+
+						.info
+
+							.company
+								a(href="http://noluyo.tv" target="_blank") N'oluyo
+							.title Front-End Developer
+							.timeframe September - December '15
+
+						.logo
+
+							img.noluyo(src="img/jobExp/noluyo.png")
+
+					.job
+
+						.info
+
+							.company
+								a(href="http://www.tsk.tr/" target="_blank") Empire
+							.title Stormtrooper
+							.timeframe February - July '15
+
+						.logo
+
+							img.empire(src="img/jobExp/empire.png")
+
+					.job
+
+						.info
+
+							.company
+								a(href="http://1v1y.com" target="_blank") 1V1Y
+							.title Graphic Designer
+							.timeframe Augustus - October '13
+
+						.logo
+
+							img.empire(src="img/jobExp/1v1y.png")
+
+					.job
+
+						.info
+
+							.company
+								a(href="http://pixelcreative.com.tr" target="_blank") Pixel Creative
+							.title Jnr. Front-End Developer
+							.timeframe 3 Months
+
+						.logo
+
+							img.empire(src="img/jobExp/pixelcreative.png")
+
+					.job
+
+						.info
+
+							.company
+								a(href="http://hurelonline.com/yaratici_iletisim.aspx" target="_blank") Feridun Hürel Yaratıcı İletişim
+							.title Jnr. Graphic Designer
+							.timeframe 6 Months
+
+						.logo
+
+							img.empire(src="img/jobExp/feridunhurel.png")
+
+			#portfolio
+
+				.container
+
+					.item.one
+
+						a(href="https://codepen.io/ebuyuran/pen/VWVOLW" target="_blank")
+
+							img(src="img/portfolio/pipboy.png")
+
+					.item.two
+
+						a(href="http://huaweiakademi.com/" target="_blank")
+
+							img(src="img/portfolio/huawei.jpg")
+
+					.item.one
+
+						a(href="portfolio/aygaz1000/" target="_blank")
+
+							img(src="img/portfolio/aygaz1000.jpg")
+
+					.item.one
+
+						a(href="portfolio/hyundaisurprizi/" target="_blank")
+
+							img(src="img/portfolio/hyundaisurprizi.jpg")
+
+					.item.one
+
+						a(href="portfolio/huaweilandingpage/" target="_blank")
+
+							img(src="img/portfolio/huaweilandingpage.jpg")
+
+					.item.one
+
+						a(href="portfolio/hyundaieuro2016/" target="_blank")
+
+							img(src="img/portfolio/hyundaieuro2016.jpg")
+
+					.item.one
+
+						a(href="portfolio/aygaztasarruf/" target="_blank")
+
+							img(src="img/portfolio/aygaztasarruf.jpg")
+
+					.item.one
+
+						a(href="http://www.ticaretinyeri.com/" target="_blank")
+
+							img(src="img/portfolio/ticaretinyeri.jpg")
+
+					.item.one
+
+						a(href="portfolio/noluyokaydol/" target="_blank")
+
+							img(src="img/portfolio/noluyokaydol.jpg")
+
+					.item.two
+
+						a(href="portfolio/aygazistasyon/" target="_blank")
+
+							img(src="img/portfolio/aygazistasyon.jpg")
+
+			#contact
+
+				.content
+
+					p Please send me an email at #[a(href="mailto:efebuyuran@gmail.com") efebuyuran@gmail.com] or get in touch with me through one of my social media accounts.
+
+					ul.social
+
+						li #[a(href="https://www.linkedin.com/in/ebuyuran/" target="_blank") #[img(src="img/social/linkedin.png")] /ebuyuran]
+
+						li #[a(href="https://www.facebook.com/ebuyuran" target="_blank") #[img(src="img/social/facebook.png")] /ebuyuran]
+
+						li #[a(href="https://www.instagram.com/ebuyuran" target="_blank") #[img(src="img/social/instagram.png")] /ebuyuran]
+
+
+
+
+		include puglib/bottom.pug
