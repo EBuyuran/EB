@@ -239,8 +239,7 @@ table {
   position: fixed;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   z-index: -1000;
   background: radial-gradient(ellipse at center, #ffffff 45%, #c7c7c7 70%, #787878 93%);
   pointer-events: none; }
@@ -255,8 +254,7 @@ table {
     position: absolute;
     background-image: url("../img/star.png");
     background-size: 100%;
-    -webkit-animation: roll 12s linear infinite;
-            animation: roll 12s linear infinite; }
+    animation: roll 12s linear infinite; }
     #stars div.small {
       width: 15px;
       height: 15px; }
@@ -267,21 +265,11 @@ table {
       width: 50px;
       height: 50px; }
 
-@-webkit-keyframes roll {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
-
 @keyframes roll {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
+    transform: rotate(0deg); }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
+    transform: rotate(360deg); } }
 
 header {
   position: absolute;
@@ -345,15 +333,12 @@ header {
         width: 124px;
         height: 64px; } }
     header .langSwitch .box {
-      display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: center;
+          justify-content: center;
       position: absolute;
       top: 4px;
       width: 22px;
@@ -400,8 +385,7 @@ header {
         header .langSwitch .box.btn.switched {
           left: 4px; }
           header .langSwitch .box.btn.switched:after {
-            -webkit-transform: rotate(180deg);
-                    transform: rotate(180deg); }
+            transform: rotate(180deg); }
 
 main {
   width: 100%;
@@ -471,8 +455,7 @@ main {
   #hamburgerBtn div {
     position: absolute;
     left: 50%;
-    -webkit-transform: translate(-50%, 0) rotate(0deg);
-            transform: translate(-50%, 0) rotate(0deg);
+    transform: translate(-50%, 0) rotate(0deg);
     width: 16px;
     height: 3px;
     background: black;
@@ -489,16 +472,14 @@ main {
       height: 4px;
       top: 50%;
       left: 50%;
-      -webkit-transform: translate(-50%, -50%) rotate(405deg);
-              transform: translate(-50%, -50%) rotate(405deg); }
+      transform: translate(-50%, -50%) rotate(405deg); }
     #hamburgerBtn.expanded div:nth-child(2) {
       opacity: 0; }
     #hamburgerBtn.expanded div:nth-child(3) {
       height: 4px;
       top: 50%;
       left: 50%;
-      -webkit-transform: translate(-50%, -50%) rotate(-405deg);
-              transform: translate(-50%, -50%) rotate(-405deg); }
+      transform: translate(-50%, -50%) rotate(-405deg); }
   @media (min-width: 768px) {
     #hamburgerBtn {
       display: none !important; } }
@@ -554,12 +535,10 @@ main {
 
 #home {
   height: 100%;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  -ms-flex-align: center;
+      align-items: center; }
   @media (min-width: 768px) {
     #home .content {
       position: relative; } }
@@ -608,8 +587,7 @@ main {
     position: absolute;
     bottom: 8vh;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     font-family: "Montserrat-Medium";
     font-size: 0.75em;
     padding: 0.8em 0;
@@ -622,8 +600,7 @@ main {
       #home .content a.btn {
         display: block;
         position: static;
-        -webkit-transform: none;
-                transform: none; } }
+        transform: none; } }
   #home.active + .bgImg {
     opacity: .65; }
 
@@ -656,8 +633,7 @@ main {
       #brands .container {
         top: 50%;
         left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
         max-height: 100%; } }
     #brands .container .item {
       display: inline-block;
@@ -743,8 +719,7 @@ main {
       #cv .block .job .info {
         position: relative;
         top: 50%;
-        -webkit-transform: translateY(-50%);
-                transform: translateY(-50%);
+        transform: translateY(-50%);
         float: left;
         width: 65%; }
         #cv .block .job .info .company {
@@ -766,8 +741,7 @@ main {
           position: absolute;
           top: 50%;
           left: 50%;
-          -webkit-transform: translate(-50%, -50%);
-                  transform: translate(-50%, -50%); }
+          transform: translate(-50%, -50%); }
         #cv .block .job .logo img.theking {
           width: auto;
           height: 80%; }
@@ -808,21 +782,16 @@ main {
   width: 100%;
   margin-bottom: -24px;
   overflow: hidden;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+      flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: start;
+      align-items: flex-start;
   -ms-flex-line-pack: start;
       align-content: flex-start;
   padding-right: 8px; }
@@ -854,8 +823,7 @@ main {
   position: relative;
   max-width: 640px;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%); }
+  transform: translateY(-50%); }
   #contact .content ul.social li a {
     font-size: 14px; }
     #contact .content ul.social li a img {

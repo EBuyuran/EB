@@ -25,9 +25,9 @@
 				],
 				"skillsTitle": "Skills",
 				"frontendTitle": "Front-End",
-				"frontendList": ["PUG -> HTML5", "SASS -> CSS3", "Native Javascript", "AJAX", "NodeJS & Taskrunners", "Dynamic SVG", "Speed Optimisation", "SEO Enhancements", "Google Analytics", "Interactive HTML5 Banners"],
+				"frontendList": ["PUG -> HTML5", "SASS -> CSS3", "Native Javascript", "React", "Basic NodeJS & Taskrunners", "Dynamic SVG", "Speed Optimisation", "SEO Enhancements", "Google Analytics", "Interactive HTML5 Banners"],
 				"toolsTitle": "Tools & Software",
-				"toolList": ["Adobe Photoshop", "Adobe Illustrator", "Adobe Audition", "Adobe Premiere", "Adobe Flash", "Sublime Text", "Visual Studio"],
+				"toolList": ["Adobe Photoshop", "Adobe Illustrator", "Adobe Audition", "Adobe Premiere", "Adobe Flash", "Sublime Text", "Web Storm"],
 				"academicTitle": "Academic",
 				"academicList": [
 					{
@@ -54,10 +54,18 @@
 				"workTitle": "Work Experience",
 				"workList": [
 					{
+						"link": "http://spinmatic.com",
+						"company": "Spinmatic Entertainment",
+						"title": "Front-End Developer",
+						"timeframe": "November '22 2017 - Present",
+						"logoURL": "img/jobExp/spinmatic.png",
+						"imgClass": ""
+					},
+					{
 						"link": "http://theking.com.tr",
 						"company": "theKingCCA",
 						"title": "Front-End Developer",
-						"timeframe": "April '16 - Present",
+						"timeframe": "April '16 2016 - November '22 2017",
 						"logoURL": "img/jobExp/theking.png",
 						"imgClass": "theking"
 					},
@@ -132,9 +140,9 @@
 				],
 				"skillsTitle": "Compétences",
 				"frontendTitle": "Front-End",
-				"frontendList": ["PUG -> HTML5", "SASS -> CSS3", "Native Javascript", "AJAX", "NodeJS & Taskrunners", "Dynamic SVG", "Optimisation de vitesse", "Améliorations SEO", "Google Analytics", "Bannières HTML5 interactives"],
+				"frontendList": ["PUG -> HTML5", "SASS -> CSS3", "Native Javascript", "React", "NodeJS & Taskrunners", "Dynamic SVG", "Optimisation de vitesse", "Améliorations SEO", "Google Analytics", "Bannières HTML5 interactives"],
 				"toolsTitle": "Outils et Logiciels",
-				"toolList": ["Adobe Photoshop", "Adobe Illustrator", "Adobe Audition", "Adobe Premiere", "Adobe Flash", "Sublime Text", "Visual Studio"],
+				"toolList": ["Adobe Photoshop", "Adobe Illustrator", "Adobe Audition", "Adobe Premiere", "Adobe Flash", "Sublime Text", "Web Storm"],
 				"academicTitle": "Académique",
 				"academicList": [
 					{
@@ -218,6 +226,7 @@
 
 		"brands": [
 
+			"img/brands/spinmatic.png",
 			"img/brands/hyundai.png",
 			"img/brands/huawei.png",
 			"img/brands/koc.png",
